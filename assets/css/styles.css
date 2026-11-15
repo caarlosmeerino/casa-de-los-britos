@@ -1023,3 +1023,7 @@ body[data-hero="dark"] .top .burger { border-color: rgba(255, 253, 244, 0.5); }
 }
 @media (min-width: 900px) { .ghero__media::after { background: linear-gradient(90deg, rgba(22, 8, 9, 0.58) 0%, rgba(22, 8, 9, 0.2) 45%, rgba(22, 8, 9, 0) 70%), linear-gradient(180deg, rgba(22, 8, 9, 0.6) 0%, rgba(22, 8, 9, 0) 24%, rgba(22, 8, 9, 0) 48%, rgba(22, 8, 9, 0.75) 100%); } }
 .about { padding-bottom: clamp(56px, 7vw, 104px); }
+/* Velo más denso para que el texto de la portada se lea sobre cualquier foto */
+.ghero__media::after { background: linear-gradient(180deg, rgba(22, 8, 9, 0.7) 0%, rgba(22, 8, 9, 0.42) 22%, rgba(22, 8, 9, 0.55) 40%, rgba(22, 8, 9, 0.82) 62%, rgba(22, 8, 9, 0.92) 100%); }
+@media (min-width: 900px) { .ghero__media::after { background: linear-gradient(90deg, rgba(22, 8, 9, 0.78) 0%, rgba(22, 8, 9, 0.5) 42%, rgba(22, 8, 9, 0.12) 72%, rgba(22, 8, 9, 0) 100%), linear-gradient(180deg, rgba(22, 8, 9, 0.6) 0%, rgba(22, 8, 9, 0.1) 24%, rgba(22, 8, 9, 0.1) 48%, rgba(22, 8, 9, 0.8) 100%); } }
+.ghero h1, .ghero__lead, .ghero__kicker { text-shadow: 0 1px 18px rgba(22, 8, 9, 0.45); }

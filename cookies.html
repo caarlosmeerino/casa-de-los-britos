@@ -15,7 +15,7 @@
 <link rel="icon" type="image/png" href="assets/logos/casa-logo-completo.png">
 <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/css/styles.css?v=8208bb47">
+<link rel="stylesheet" href="assets/css/styles.css?v=adefd5d1">
 <script src="assets/js/main.js?v=a32b78e7" defer></script>
 <script src="assets/js/motion.js?v=c73606e4" defer></script>
 <script src="assets/js/carousel.js?v=3fe8a7d3" defer></script>
