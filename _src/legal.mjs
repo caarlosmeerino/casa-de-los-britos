@@ -1,14 +1,16 @@
 // Datos del titular para los textos legales.
-// PENDIENTE: el cliente debe facilitar estos datos. Mientras falten, se muestran marcados en la página.
+// Lo que aún falta (correo y datos registrales) se muestra marcado en la página.
 const P = (t) => `<mark class="pend">${t}</mark>`;
 
 export const TITULAR = {
-  nombre: P('[Razón social o nombre del titular]'),
-  nif: P('[NIF / CIF]'),
+  nombre: 'Britos Restauración &amp; Eventos S.L.',
+  comercial: 'Casa de los Britos y Britos Restauración &amp; Eventos',
+  actividad: 'Restaurante (CNAE 56.11), catering y servicio de bebidas',
+  nif: 'B23977234',
   domicilio: 'C. Meléndez Valdés, 14, 06225 Ribera del Fresno (Badajoz)',
   email: P('[correo de contacto]'),
   telefono: '635 82 40 92',
-  registro: P('[Datos de inscripción en el Registro Mercantil, si es una sociedad]'),
+  registro: P('[Registro Mercantil de Badajoz: tomo, folio, hoja e inscripción]'),
   web: P('[dominio de la web]'),
 };
 

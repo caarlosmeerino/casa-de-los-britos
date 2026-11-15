@@ -11,7 +11,9 @@ export const body = () => legalPage('Aviso legal',
   [
     ['1. Titular de la web', `<ul>
       <li><strong>Titular:</strong> ${T.nombre}</li>
+      <li><strong>Nombres comerciales:</strong> ${T.comercial}</li>
       <li><strong>NIF/CIF:</strong> ${T.nif}</li>
+      <li><strong>Actividad:</strong> ${T.actividad}</li>
       <li><strong>Domicilio:</strong> ${T.domicilio}</li>
       <li><strong>Teléfono:</strong> ${T.telefono}</li>
       <li><strong>Correo electrónico:</strong> ${T.email}</li>
