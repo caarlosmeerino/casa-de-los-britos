@@ -25,10 +25,11 @@ $pageDesc = $post ? ($post['excerpt'] ?: mb_substr(strip_tags(md($post['body']))
 <link rel="icon" type="image/png" href="<?= $R ?>assets/logos/casa-logo-completo.png">
 <link rel="preload" href="<?= $R ?>assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="<?= $R ?>assets/css/styles.css?v=69b793e0">
+<link rel="stylesheet" href="<?= $R ?>assets/css/styles.css?v=a2ef2fbd">
 <script src="<?= $R ?>assets/js/main.js?v=a32b78e7" defer></script>
 <script src="<?= $R ?>assets/js/motion.js?v=c210499e" defer></script>
 <script src="<?= $R ?>assets/js/carousel.js?v=3fe8a7d3" defer></script>
+<script src="<?= $R ?>assets/js/cursor.js?v=483a7f32" defer></script>
 </head>
 <body data-theme="casa">
 <div class="loader" aria-hidden="true"><img class="loader__mark" src="<?= $R ?>assets/logos/casa-logo-completo-laton.png" alt="" width="800" height="800"><span class="loader__line"><i></i></span></div>
@@ -44,7 +45,7 @@ $pageDesc = $post ? ($post['excerpt'] ?: mb_substr(strip_tags(md($post['body']))
   <a class="top__brand" href="<?= $R ?>" aria-label="Casa de los Britos, inicio"><img src="<?= $R ?>assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
   <div class="top__r">
     <span class="status top__status"><i></i><span data-live>Abrimos de jueves a domingo</span></span>
-    <a class="top__call" href="tel:+34635824092">Reservar · <span class="num">635 82 40 92</span></a>
+    <a class="top__call" href="tel:+34635824092" aria-label="Reservar · 635 82 40 92"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Reservar</span><span class="top__num">&nbsp;· <span class="num">635 82 40 92</span></span></a>
     <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
   </div>
 </header>
@@ -52,7 +53,7 @@ $pageDesc = $post ? ($post['excerpt'] ?: mb_substr(strip_tags(md($post['body']))
   <a class="pill__brand" href="<?= $R ?>" aria-label="Casa de los Britos, inicio"><img src="<?= $R ?>assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
   <nav class="pnav" aria-label="Principal"><span class="hl" aria-hidden="true"></span><a href="<?= $R ?>el-restaurante">El restaurante</a><a href="<?= $R ?>carta">La carta</a><a href="<?= $R ?>reservas">Reservas</a><a href="<?= $R ?>contacto">Contacto</a><a href="<?= $R ?>blog" aria-current="page">Blog</a></nav>
   <span class="pnav__sep" aria-hidden="true"></span><a class="pnav__brand" href="<?= $R ?>eventos"><img src="<?= $R ?>assets/logos/britos-icono-white.png" alt="" width="18" height="18">Eventos</a>
-  <a class="btn pill__call" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar <span class="num">635 82 40 92</span></a>
+  <a class="btn pill__call" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Reservar<span class="pill__num">&nbsp;<span class="num">635 82 40 92</span></span></a>
   <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" inert>
@@ -138,7 +139,6 @@ $pageDesc = $post ? ($post['excerpt'] ?: mb_substr(strip_tags(md($post['body']))
     <div class="footer__legal"><p>© <span data-year>2026</span> Casa de los Britos · Parte de <a href="<?= $R ?>eventos">Britos Restauración &amp; Eventos</a></p><p class="footer__links"><a href="<?= $R ?>aviso-legal">Aviso legal</a> · <a href="<?= $R ?>privacidad">Privacidad</a> · <a href="<?= $R ?>cookies">Cookies</a></p></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn btn--lg" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Reservar · <span class="num">635 82 40 92</span></a></div>
 <p id="live" class="sr-only" aria-live="polite"></p>
 </body>
 </html>

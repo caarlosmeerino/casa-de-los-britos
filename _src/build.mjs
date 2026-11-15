@@ -40,7 +40,7 @@ const NAV = {
       { href: 'blog.php', key: 'blog', label: 'Blog', small: 'Novedades', img: '4e3a8597' },
     ],
     out: { href: 'eventos.html', pillLabel: 'Eventos', icon: 'assets/logos/britos-icono-white.png', img: 'assets/logos/eventos-logotipo-01-white.png', w: 800, h: 220, alt: 'Britos Restauración & Eventos' },
-    call: DATA.tel, callLabel: 'Llamar',
+    call: DATA.tel, callLabel: 'Reservar',
   },
   britos: {
     brand: { href: 'eventos.html', img: 'assets/logos/britos-logotipo-burdeos.png', w: 900, h: 248, alt: 'Britos Restauración & Eventos', label: 'Britos Restauración & Eventos, inicio' },
@@ -85,6 +85,7 @@ ${pre}
 <script src="${ver('assets/js/main.js')}" defer></script>
 <script src="${ver('assets/js/motion.js')}" defer></script>
 <script src="${ver('assets/js/carousel.js')}" defer></script>
+<script src="${ver('assets/js/cursor.js')}" defer></script>
 </head>`;
 }
 
@@ -92,12 +93,12 @@ ${pre}
 function top(theme) {
   const n = NAV[theme];
   const status = theme === 'casa' ? '<span class="status top__status"><i></i><span data-live>Abrimos de jueves a domingo</span></span>' : '';
-  const callText = theme === 'casa' ? 'Reservar' : 'Eventos';
+  const callText = theme === 'casa' ? 'Reservar' : 'Llamar';
   return `<header class="top" id="top">
   <a class="top__brand" href="${n.brand.href}" aria-label="${n.brand.label}"><img src="${n.brand.img}" alt="${n.brand.alt}" width="${n.brand.w}" height="${n.brand.h}"></a>
   <div class="top__r">
     ${status}
-    <a class="top__call" href="${n.call.href}">${callText} · <span class="num">${n.call.display}</span></a>
+    <a class="top__call" href="${n.call.href}" aria-label="${callText} · ${n.call.display}">${ico('phone')}<span>${callText}</span><span class="top__num">&nbsp;· <span class="num">${n.call.display}</span></span></a>
     <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
   </div>
 </header>`;
@@ -113,7 +114,7 @@ function pill(theme, current) {
   <a class="pill__brand" href="${n.brand.href}" aria-label="${n.brand.label}"><img src="${n.brand.img}" alt="${n.brand.alt}" width="${n.brand.w}" height="${n.brand.h}"></a>
   <nav class="pnav" aria-label="Principal"><span class="hl" aria-hidden="true"></span>${links}</nav>
   ${out}
-  <a class="btn pill__call" href="${n.call.href}">${ico('phone')}${n.callLabel} <span class="num">${n.call.display}</span></a>
+  <a class="btn pill__call" href="${n.call.href}">${ico('phone')}${n.callLabel}<span class="pill__num">&nbsp;<span class="num">${n.call.display}</span></span></a>
   <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
 </header>`;
 }
@@ -272,7 +273,6 @@ ${menu(m.theme, m.current)}
 ${body}
 </main>
 ${footer(m.theme)}
-${callbar(m.theme)}
 <p id="live" class="sr-only" aria-live="polite"></p>
 </body>
 </html>

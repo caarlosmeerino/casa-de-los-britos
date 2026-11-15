@@ -16,10 +16,11 @@
 <link rel="preload" href="assets/fonts/unageo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/coliner-medium.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/css/styles.css?v=69b793e0">
+<link rel="stylesheet" href="assets/css/styles.css?v=a2ef2fbd">
 <script src="assets/js/main.js?v=a32b78e7" defer></script>
 <script src="assets/js/motion.js?v=c210499e" defer></script>
 <script src="assets/js/carousel.js?v=3fe8a7d3" defer></script>
+<script src="assets/js/cursor.js?v=483a7f32" defer></script>
 </head>
 <body data-theme="britos">
 <div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/britos-icono.png" alt="" width="256" height="256"><span class="loader__line"><i></i></span></div>
@@ -35,7 +36,7 @@
   <a class="top__brand" href="eventos" aria-label="Britos Restauración & Eventos, inicio"><img src="assets/logos/britos-logotipo-burdeos.png" alt="Britos Restauración & Eventos" width="900" height="248"></a>
   <div class="top__r">
     
-    <a class="top__call" href="tel:+34609751647">Eventos · <span class="num">609 75 16 47</span></a>
+    <a class="top__call" href="tel:+34609751647" aria-label="Llamar · 609 75 16 47"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Llamar</span><span class="top__num">&nbsp;· <span class="num">609 75 16 47</span></span></a>
     <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
   </div>
 </header>
@@ -43,7 +44,7 @@
   <a class="pill__brand" href="eventos" aria-label="Britos Restauración & Eventos, inicio"><img src="assets/logos/britos-logotipo-burdeos.png" alt="Britos Restauración & Eventos" width="900" height="248"></a>
   <nav class="pnav" aria-label="Principal"><span class="hl" aria-hidden="true"></span><a href="#bodas">Bodas</a><a href="#bautizos">Bautizos</a><a href="#comuniones">Comuniones</a><a href="#catering">Catering</a><a href="#empresa">Empresa</a><a href="#presupuesto">Presupuesto</a></nav>
   
-  <a class="btn pill__call" href="tel:+34609751647"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar <span class="num">609 75 16 47</span></a>
+  <a class="btn pill__call" href="tel:+34609751647"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar<span class="pill__num">&nbsp;<span class="num">609 75 16 47</span></span></a>
   <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" inert>
@@ -228,7 +229,6 @@
     <div class="footer__legal"><p>© <span data-year>2026</span> Britos Restauración &amp; Eventos · Ribera del Fresno, Badajoz</p><p class="footer__links"><a href="aviso-legal">Aviso legal</a> · <a href="privacidad">Privacidad</a> · <a href="cookies">Cookies</a></p></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn btn--lg" href="tel:+34609751647"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar · <span class="num">609 75 16 47</span></a></div>
 <p id="live" class="sr-only" aria-live="polite"></p>
 </body>
 </html>

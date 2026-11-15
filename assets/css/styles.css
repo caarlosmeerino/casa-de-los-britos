@@ -274,7 +274,6 @@ body.menu-open { overflow: hidden; }
 .callbar .btn { width: 100%; min-height: 56px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.55); letter-spacing: 0.02em; }
 body[data-theme="casa"] .callbar .btn { background: var(--mantel); border-color: var(--mantel); color: var(--noche); }
 @media (min-width: 900px) { .callbar { display: none; } }
-@media (max-width: 899px) { body:has(.callbar) .footer { padding-bottom: calc(100px + env(safe-area-inset-bottom)); } }
 
 /* ---------- Photos ---------- */
 .ph { position: relative; overflow: hidden; background: var(--surface); margin: 0; border-radius: 4px; }
@@ -874,3 +873,47 @@ html.loader-quick .loader { opacity: 0; animation: loader-show 250ms ease 350ms 
 /* La entrada de la portada espera a que se vaya la pantalla de carga */
 html.is-loading [data-enter], html.is-loading [data-enter] * { animation-play-state: paused !important; }
 html.loader-out .loader { display: grid; }
+
+/* =====================================================================
+   Reservar arriba también en el móvil (sin barra fija abajo)
+   ===================================================================== */
+.callbar { display: none !important; }
+.top__call .ico { display: none; }
+@media (max-width: 599px) {
+  .top__r { gap: 10px; }
+  .top__call { display: inline-flex; gap: 8px; height: 44px; padding: 0 16px; border-radius: 999px; font-size: 0.8125rem; letter-spacing: 0.08em; background: var(--accent); color: var(--accent-ink); }
+  body[data-theme="casa"] .top__call { background: var(--mantel); color: var(--noche); }
+  .top__call::after, .top__num { display: none; }
+  .top__call .ico { display: block; width: 17px; height: 17px; }
+  .top .burger { width: 44px; height: 44px; }
+  .top .burger b { left: 12px; }
+  .top .burger b:nth-child(1) { top: 15px; } .top .burger b:nth-child(2) { top: 21px; } .top .burger b:nth-child(3) { top: 27px; }
+  .top .burger[aria-expanded="true"] b:nth-child(1), .top .burger[aria-expanded="true"] b:nth-child(3) { top: 21px; }
+}
+@media (max-width: 899px) {
+  .pill__call { display: inline-flex; min-height: 40px; padding: 0 14px; gap: 7px; font-size: 0.8125rem; white-space: nowrap; }
+  .pill__call .ico { width: 16px; height: 16px; }
+  .pill__num { display: none; }
+}
+
+/* =====================================================================
+   Cursor propio en ordenador: punto + aro que lo sigue con inercia
+   ===================================================================== */
+.cursor { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  html.has-cursor, html.has-cursor * { cursor: none !important; }
+  html.has-cursor :is(input, textarea, select, [contenteditable]) { cursor: auto !important; }
+  html.has-cursor .cursor { display: block; }
+  .cursor { position: fixed; left: 0; top: 0; z-index: 400; pointer-events: none; }
+  .cursor__dot, .cursor__ring { position: fixed; left: 0; top: 0; border-radius: 50%; pointer-events: none; opacity: 0; transition: opacity 200ms ease; }
+  .cursor__dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--accent); }
+  .cursor__ring { width: 38px; height: 38px; margin: -19px 0 0 -19px; }
+  .cursor__ring i { position: absolute; inset: -1px; border-radius: 50%; border: 1px solid var(--accent); background: transparent; transition: transform 380ms var(--ease-expo), background-color 300ms ease, border-color 300ms ease; }
+  html.cursor-in .cursor__dot, html.cursor-in .cursor__ring { opacity: 1; }
+  html.cursor-hover .cursor__ring i { transform: scale(1.7); background: color-mix(in srgb, var(--accent) 16%, transparent); }
+  html.cursor-hover .cursor__dot { opacity: 0; }
+  html.cursor-down .cursor__ring i { transform: scale(0.8); }
+  html.cursor-hover.cursor-down .cursor__ring i { transform: scale(1.5); }
+  html.cursor-text .cursor__dot, html.cursor-text .cursor__ring { opacity: 0; }
+}
+@media (min-width: 600px) { .top__call { gap: 0; } }
