@@ -4,9 +4,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
+// Versión por contenido: si el archivo cambia, el navegador y GitHub no sirven el antiguo
+const ver = (rel) => `${rel}?v=${crypto.createHash('md5').update(fs.readFileSync(path.join(root, rel))).digest('hex').slice(0, 8)}`;
 
 export const DATA = {
   tel: { display: '635 82 40 92', href: 'tel:+34635824092' },
@@ -78,10 +81,10 @@ ${m.theme === 'britos'
   ? '<link rel="preload" href="assets/fonts/unageo-var.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="assets/fonts/coliner-medium.woff2" as="font" type="font/woff2" crossorigin>'
   : '<link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>'}
 ${pre}
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/motion.js" defer></script>
-<script src="assets/js/carousel.js" defer></script>
+<link rel="stylesheet" href="${ver('assets/css/styles.css')}">
+<script src="${ver('assets/js/main.js')}" defer></script>
+<script src="${ver('assets/js/motion.js')}" defer></script>
+<script src="${ver('assets/js/carousel.js')}" defer></script>
 </head>`;
 }
 

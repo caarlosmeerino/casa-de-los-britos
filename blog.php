@@ -15,10 +15,10 @@
 <link rel="icon" type="image/png" href="assets/logos/casa-logo-completo.png">
 <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/motion.js" defer></script>
-<script src="assets/js/carousel.js" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=69b793e0">
+<script src="assets/js/main.js?v=a32b78e7" defer></script>
+<script src="assets/js/motion.js?v=c210499e" defer></script>
+<script src="assets/js/carousel.js?v=3fe8a7d3" defer></script>
 </head>
 <body data-theme="casa">
 <div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/casa-logo-completo-laton.png" alt="" width="800" height="800"><span class="loader__line"><i></i></span></div>
