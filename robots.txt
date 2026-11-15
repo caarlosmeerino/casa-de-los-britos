@@ -1,0 +1,4 @@
+# Versión de prueba en GitHub Pages: que los buscadores no la indexen.
+# Al publicar en el dominio definitivo, cambiar "Disallow: /" por "Disallow:" (vacío).
+User-agent: *
+Disallow: /

@@ -1,0 +1,6 @@
+# Los archivos internos (empiezan por _) no se pueden abrir desde el navegador
+<FilesMatch "^_">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>

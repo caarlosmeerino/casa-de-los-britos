@@ -1,0 +1,24 @@
+# Originales pesados (las versiones optimizadas están en assets/)
+Fotos Web/
+Logos Casa de los Britos/
+Logos Britos Restauracion & Eventos/
+Tipografia/
+
+# Borradores, pruebas y herramientas locales
+_propuesta/
+.playwright-mcp/
+.claude/
+PRODUCT.md
+
+# Datos privados del panel: NUNCA se suben
+_src/ADMIN-LEEME.md
+data/*
+!data/.htaccess
+uploads/*
+!uploads/.htaccess
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+.taste-skill/
