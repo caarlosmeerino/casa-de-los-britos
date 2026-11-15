@@ -865,3 +865,30 @@ body[data-theme="casa"] .mlinks a[aria-current="page"] span { font-weight: 400; 
   .review { scroll-snap-align: start; }
   .reviews__list .review:nth-child(n+4) { display: flex; }
 }
+
+/* =====================================================================
+   Pantalla de carga minimalista
+   ===================================================================== */
+.loader { position: fixed; inset: 0; z-index: 300; display: none; align-content: center; justify-items: center; gap: 28px; background: var(--bg); }
+body[data-theme="casa"] .loader { background: var(--noche); }
+html.is-loading .loader { display: grid; }
+html.is-loading body { overflow: hidden; }
+.loader__mark { width: 96px; height: auto; animation: loader-breathe 1800ms ease-in-out infinite; }
+body[data-theme="britos"] .loader__mark { width: 56px; }
+.loader__line { position: relative; width: 120px; height: 1px; overflow: hidden; background: var(--line); }
+.loader__line i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; animation: loader-line 1300ms var(--ease-in-out) infinite; }
+@keyframes loader-breathe { 0%, 100% { opacity: 0.55; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
+@keyframes loader-line { 0% { transform: translateX(-100%) scaleX(0.4); } 60% { transform: translateX(40%) scaleX(0.6); } 100% { transform: translateX(110%) scaleX(0.4); } }
+/* Salida: fundido y la marca sube un poco */
+html.loader-out .loader { opacity: 0; transition: opacity 600ms var(--ease-out) 80ms; pointer-events: none; }
+html.loader-out .loader__mark { transform: translateY(-8px); opacity: 0; transition: transform 600ms var(--ease-out), opacity 400ms ease; animation: none; }
+/* En visitas siguientes solo aparece si la carga tarda más de 0,35 s */
+html.loader-quick .loader { opacity: 0; animation: loader-show 250ms ease 350ms forwards; }
+@keyframes loader-show { to { opacity: 1; } }
+/* La entrada de la portada espera a que se vaya la pantalla de carga */
+html.is-loading [data-enter], html.is-loading [data-enter] * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .loader__mark, .loader__line i { animation: none; }
+  .loader__line i { transform: none; opacity: 0.6; }
+}
+html.loader-out .loader { display: grid; }

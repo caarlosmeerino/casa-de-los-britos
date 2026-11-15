@@ -51,6 +51,11 @@ function inline_md(string $s): string {
     $url = html_entity_decode($m[2], ENT_QUOTES, 'UTF-8');
     if (!preg_match('~^(https?://|mailto:|tel:|/|[a-z0-9-]+\.(html|php)(\?|#|$)|#)~i', $url)) return $m[1];
     $ext = preg_match('~^https?://~i', $url) ? ' target="_blank" rel="noopener"' : '';
+    // enlaces internos: sin .html y desde la raíz de la web (las entradas están en /blog/slug)
+    if (preg_match('~^[a-z0-9-]+\.(html|php)~i', $url)) {
+      $url = preg_replace(['~^index\.html~i', '~\.html(?=[#?]|$)~i', '~^blog\.php~i'], ['', '', 'blog'], $url) ?? $url;
+      $url = ($GLOBALS['R'] ?? '') . $url;
+    }
     return '<a href="' . e($url) . '"' . $ext . '>' . $m[1] . '</a>';
   }, $s) ?? $s;
   return $s;

@@ -1,10 +1,13 @@
 export const meta = {
-  out: 'entrada.php', theme: 'casa', current: 'blog', og: '4e3a8597',
+  out: 'entrada.php', theme: 'casa', current: 'blog', og: '4e3a8597', rootPrefix: true,
   title: '<?= e($pageTitle) ?>',
   description: '<?= e($pageDesc) ?>',
   phpTop: `<?php
 declare(strict_types=1);
 require __DIR__ . '/api/_lib.php';
+// Raíz de la web (la entrada se sirve en /blog/slug, un nivel más abajo)
+$R = rtrim(strtr(dirname($_SERVER['SCRIPT_NAME'] ?? '/'), DIRECTORY_SEPARATOR, '/'), '/') . '/';
+$GLOBALS['R'] = $R;
 $post = find_post((string) ($_GET['s'] ?? ''));
 if (!$post || empty($post['published']) || ($post['date'] ?? '') > date('Y-m-d')) { http_response_code(404); $post = null; }
 $pageTitle = $post ? $post['title'] . ' · Blog · Casa de los Britos' : 'Entrada no encontrada · Casa de los Britos';

@@ -20,3 +20,37 @@ DirectoryIndex index.html index.php
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
 </IfModule>
+
+# ---------------------------------------------------------------
+# Direcciones limpias: /carta en vez de /carta.html
+# (si la web se instala en una subcarpeta, añadir: RewriteBase /subcarpeta/)
+# ---------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Las direcciones antiguas con .html redirigen a la limpia (301)
+  RewriteCond %{THE_REQUEST} \s/+(.*?/)?index\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+blog\.php[\s?] [NC]
+  RewriteRule ^ /blog [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+entrada\.php\?s=([a-z0-9-]+)[\s&] [NC]
+  RewriteRule ^ /blog/%1? [R=301,L]
+
+  # Barra final → sin barra (las rutas relativas dependen de ello)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Blog: /blog y /blog/nombre-de-la-entrada
+  RewriteRule ^blog$ blog.php [L]
+  RewriteRule ^blog/([a-z0-9-]+)$ entrada.php?s=$1 [L,QSA]
+
+  # Páginas: /carta sirve carta.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([a-z0-9-]+)$ $1.html [L]
+</IfModule>
+
+ErrorDocument 404 /index.html

@@ -225,13 +225,41 @@ export const im = (name, alt, opts = {}) => {
   return img(name, alt, { w, h, ...opts });
 };
 
+/* ---------- Direcciones limpias ----------
+   carta.html → carta · index.html → ./ · blog.php → blog · entrada.php?s=x → blog/x */
+const cleanUrls = (html) => html
+  .replace(/href="index\.html(#[^"]*)?"/g, (_, h = '') => `href="./${h}"`)
+  .replace(/href="([a-z0-9-]+)\.html(#[^"]*)?"/g, (_, p, h = '') => `href="${p}${h}"`)
+  .replace(/href="blog\.php"/g, 'href="blog"')
+  .replace(/entrada\.php\?s=/g, 'blog/');
+
+/* Las entradas del blog viven en /blog/slug (un nivel más hondo): sus rutas
+   relativas se prefijan con la raíz de la web, calculada en PHP ($R). */
+const rootPrefix = (html, P) => {
+  const rel = (u) => !/^(https?:|#|tel:|mailto:|data:|\/|<\?|\.\.)/.test(u);
+  return html
+    .replace(/\b(href|src|content)="([^"]*)"/g, (all, attr, u) => {
+      if (attr === 'content' && !/^assets\//.test(u)) return all;
+      return rel(u) && u !== '' ? `${attr}="${P}${u === './' ? '' : u}"` : all;
+    })
+    .replace(/\b(srcset|imagesrcset)="([^"]*)"/g, (_, attr, v) => `${attr}="${v.split(',').map((part) => { const s = part.trim(); return rel(s) ? P + s : s; }).join(', ')}"`)
+    .replace(/url\("\.\.\//g, `url("${P}`);
+};
+
+// Pantalla de carga: aparece al instante (antes de pintar) y main.js la retira
+const LOADER_HEAD = `<script>(function(d){var h=d.documentElement;h.classList.add('js','is-loading');try{if(sessionStorage.getItem('cb-visto'))h.classList.add('loader-quick')}catch(e){}setTimeout(function(){h.classList.remove('is-loading')},6000)})(document)</script>`;
+const loader = (theme) => theme === 'britos'
+  ? `<div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/britos-icono.png" alt="" width="256" height="256"><span class="loader__line"><i></i></span></div>`
+  : `<div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/casa-logo-completo-laton.png" alt="" width="800" height="800"><span class="loader__line"><i></i></span></div>`;
+
 const pagesDir = path.join(here, 'pages');
 for (const file of fs.readdirSync(pagesDir).filter((f) => f.endsWith('.mjs'))) {
   const mod = await import(path.join(pagesDir, file).replace(/\\/g, '/').replace(/^([A-Z]):/, 'file:///$1:'));
   const m = mod.meta;
   const body = mod.body({ DATA, im, ico });
-  const html = `${m.phpTop || ""}${head(m)}
+  let html = `${m.phpTop || ""}${head(m).replace('</title>', `</title>\n${LOADER_HEAD}`)}
 <body data-theme="${m.theme}">
+${loader(m.theme)}
 ${SPRITE}
 <a class="skip" href="#main">Saltar al contenido</a>
 ${top(m.theme)}
@@ -246,6 +274,8 @@ ${callbar(m.theme)}
 </body>
 </html>
 `;
+  html = cleanUrls(html);
+  if (m.rootPrefix) html = rootPrefix(html, '<?= $R ?>');
   fs.writeFileSync(path.join(root, m.out), html);
   console.log('escrito', m.out);
 }

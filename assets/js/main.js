@@ -14,6 +14,32 @@
 
   const root = document.documentElement;
   root.classList.add('js');
+
+  /* Pantalla de carga: se va cuando las fuentes y la foto principal están listas */
+  (() => {
+    if (!root.classList.contains('is-loading')) return;
+    const quick = root.classList.contains('loader-quick');
+    const t0 = performance.now();
+    const MIN = quick ? 0 : 900; // primera visita: un instante de marca
+    const hero = document.querySelector('img[fetchpriority="high"], .hero__media img, .bhero__logo');
+    const imgReady = hero ? (hero.decode ? hero.decode().catch(() => {}) : new Promise((r) => { if (hero.complete) r(); else { hero.onload = hero.onerror = r; } })) : Promise.resolve();
+    const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+    const limit = new Promise((r) => setTimeout(r, 4000));
+    let gone = false;
+    const leave = () => {
+      if (gone) return; gone = true;
+      // la portada empieza a entrar mientras la pantalla de carga se desvanece
+      root.classList.add('loader-out');
+      root.classList.remove('is-loading');
+      setTimeout(() => root.classList.remove('loader-out', 'loader-quick'), 700);
+      try { sessionStorage.setItem('cb-visto', '1'); } catch (_) { /* nada */ }
+    };
+    Promise.race([Promise.all([imgReady, fontsReady]), limit]).then(() => {
+      setTimeout(leave, Math.max(0, MIN - (performance.now() - t0)));
+    });
+    // Al volver con el botón «atrás» (caché del navegador) no debe quedarse puesta
+    addEventListener('pageshow', (e) => { if (e.persisted) root.classList.remove('is-loading', 'loader-out', 'loader-quick'); });
+  })();
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const $ = (s, r = document) => r.querySelector(s);

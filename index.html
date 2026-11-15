@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Casa de los Britos · Restaurante en Ribera del Fresno</title>
+<script>(function(d){var h=d.documentElement;h.classList.add('js','is-loading');try{if(sessionStorage.getItem('cb-visto'))h.classList.add('loader-quick')}catch(e){}setTimeout(function(){h.classList.remove('is-loading')},6000)})(document)</script>
 <meta name="description" content="Restaurante en la antigua casa solariega de los Britos, Ribera del Fresno (Badajoz): ibérico de bellota, ternera extremeña a la brasa, pescado de lonja, arroces y bodega. Reservas por teléfono.">
 <meta name="theme-color" content="#140e0f">
 <meta property="og:type" content="website">
@@ -20,6 +21,7 @@
 <script src="assets/js/carousel.js" defer></script>
 </head>
 <body data-theme="casa">
+<div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/casa-logo-completo-laton.png" alt="" width="800" height="800"><span class="loader__line"><i></i></span></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -29,7 +31,7 @@
 </svg>
 <a class="skip" href="#main">Saltar al contenido</a>
 <header class="top" id="top">
-  <a class="top__brand" href="index.html" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
+  <a class="top__brand" href="./" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
   <div class="top__r">
     <span class="status top__status"><i></i><span data-live>Abrimos de jueves a domingo</span></span>
     <a class="top__call" href="tel:+34635824092">Reservar · <span class="num">635 82 40 92</span></a>
@@ -37,26 +39,26 @@
   </div>
 </header>
 <header class="pill" id="pill" inert>
-  <a class="pill__brand" href="index.html" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
-  <nav class="pnav" aria-label="Principal"><span class="hl" aria-hidden="true"></span><a href="el-restaurante.html">El restaurante</a><a href="carta.html">La carta</a><a href="reservas.html">Reservas</a><a href="contacto.html">Contacto</a><a href="blog.php">Blog</a></nav>
-  <span class="pnav__sep" aria-hidden="true"></span><a class="pnav__brand" href="eventos.html"><img src="assets/logos/britos-icono-white.png" alt="" width="18" height="18">Eventos</a>
+  <a class="pill__brand" href="./" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
+  <nav class="pnav" aria-label="Principal"><span class="hl" aria-hidden="true"></span><a href="el-restaurante">El restaurante</a><a href="carta">La carta</a><a href="reservas">Reservas</a><a href="contacto">Contacto</a><a href="blog">Blog</a></nav>
+  <span class="pnav__sep" aria-hidden="true"></span><a class="pnav__brand" href="eventos"><img src="assets/logos/britos-icono-white.png" alt="" width="18" height="18">Eventos</a>
   <a class="btn pill__call" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Llamar <span class="num">635 82 40 92</span></a>
   <button class="burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><b></b><b></b><b></b></button>
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" inert>
   <div class="menu__head">
-    <a href="index.html" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
+    <a href="./" aria-label="Casa de los Britos, inicio"><img src="assets/logos/casa-logotipo-03-mantel.png" alt="Restaurante Casa de los Britos" width="800" height="464"></a>
     <button class="burger" type="button" data-menu-close aria-expanded="true" aria-label="Cerrar menú"><b></b><b></b><b></b></button>
   </div>
   <div class="menu__body">
     <ul class="mlinks">
-      <li style="--i:0"><a href="index.html" data-prev="0" aria-current="page"><small>Inicio</small><span>Casa de los Britos</span></a></li>
-      <li style="--i:1"><a href="el-restaurante.html" data-prev="1"><small>El lugar</small><span>El restaurante</span></a></li>
-      <li style="--i:2"><a href="carta.html" data-prev="2"><small>Cocina</small><span>La carta</span></a></li>
-      <li style="--i:3"><a href="reservas.html" data-prev="3"><small>Mesa</small><span>Reservas</span></a></li>
-      <li style="--i:4"><a href="contacto.html" data-prev="4"><small>Visita</small><span>Contacto</span></a></li>
-      <li style="--i:5"><a href="blog.php" data-prev="5"><small>Novedades</small><span>Blog</span></a></li>
-      <li class="mlinks__out" style="--i:6"><a href="eventos.html"><img src="assets/logos/eventos-logotipo-01-white.png" alt="Britos Restauración & Eventos" width="800" height="220" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li style="--i:0"><a href="./" data-prev="0" aria-current="page"><small>Inicio</small><span>Casa de los Britos</span></a></li>
+      <li style="--i:1"><a href="el-restaurante" data-prev="1"><small>El lugar</small><span>El restaurante</span></a></li>
+      <li style="--i:2"><a href="carta" data-prev="2"><small>Cocina</small><span>La carta</span></a></li>
+      <li style="--i:3"><a href="reservas" data-prev="3"><small>Mesa</small><span>Reservas</span></a></li>
+      <li style="--i:4"><a href="contacto" data-prev="4"><small>Visita</small><span>Contacto</span></a></li>
+      <li style="--i:5"><a href="blog" data-prev="5"><small>Novedades</small><span>Blog</span></a></li>
+      <li class="mlinks__out" style="--i:6"><a href="eventos"><img src="assets/logos/eventos-logotipo-01-white.png" alt="Britos Restauración & Eventos" width="800" height="220" loading="lazy"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
     </ul>
     <div class="mprev" aria-hidden="true"><img src="assets/img/4e3a8246-800.webp" alt="" loading="lazy" class="on"><img src="assets/img/dsc06935-800.webp" alt="" loading="lazy"><img src="assets/img/dsc07287-800.webp" alt="" loading="lazy"><img src="assets/img/4e3a8236-800.webp" alt="" loading="lazy"><img src="assets/img/dsc06948-800.webp" alt="" loading="lazy"><img src="assets/img/4e3a8597-800.webp" alt="" loading="lazy"></div>
   </div>
@@ -78,7 +80,7 @@
     <div class="enter" style="--i:3" data-callbar-hide>
       <div class="hero__cta">
         <a class="btn btn--lg" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Reservar · <span class="num">635 82 40 92</span></a>
-        <a class="link" href="carta.html">Ver la carta <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="carta">Ver la carta <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <p class="status mt-m"><i></i><span data-live>Abrimos de jueves a domingo</span></p>
     </div>
@@ -109,7 +111,7 @@
   <div class="wrap">
     <h2 id="bienvenida" class="sr-only">Bienvenidos al restaurante</h2>
     <p class="statement">En la calle dedicada a Meléndez Valdés, poeta ilustre de Ribera del Fresno, nace un espacio donde disfrutar de la buena gastronomía sin prisas. Jamón ibérico de bellota, chuletones extremeños a la brasa, pescados frescos y arroces para compartir, todo ello acompañado de una cuidada selección de vinos de nuestra tierra.</p>
-    <a class="link mt-m" href="el-restaurante.html">Conocer el restaurante <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="link mt-m" href="el-restaurante">Conocer el restaurante <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
@@ -120,12 +122,12 @@
       <p class="lead">Producto de la tierra, fuego de verdad y una bodega a la vista.</p>
     </div>
     <ul class="tiles">
-      <li><a class="tile" href="carta.html#carnes"><figure class="ph ph--r45"><img src="assets/img/dsc07282-800.webp" srcset="assets/img/dsc07282-800.webp 800w, assets/img/dsc07282-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Chuletón sobre la parrilla" loading="lazy" decoding="async"></figure><h3>La brasa <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
-      <li><a class="tile" href="carta.html#arroces"><figure class="ph ph--r45"><img src="assets/img/dsc07046-800.webp" srcset="assets/img/dsc07046-800.webp 800w, assets/img/dsc07046-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Arroz meloso de boletus recién hecho" loading="lazy" decoding="async"></figure><h3>Los arroces <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
-      <li><a class="tile" href="carta.html#tierra"><figure class="ph ph--r45"><img src="assets/img/4e3a8357-800.webp" srcset="assets/img/4e3a8357-800.webp 800w, assets/img/4e3a8357-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Jamón ibérico de bellota cortado a cuchillo" loading="lazy" decoding="async"></figure><h3>La tierra <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
-      <li><a class="tile" href="carta.html#bodega"><figure class="ph ph--r45"><img src="assets/img/dsc06961-800.webp" srcset="assets/img/dsc06961-800.webp 800w, assets/img/dsc06961-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Botellas de la bodega del restaurante" loading="lazy" decoding="async"></figure><h3>La bodega <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
-      <li><a class="tile" href="carta.html#postres"><figure class="ph ph--r45"><img src="assets/img/dsc07442-800.webp" srcset="assets/img/dsc07442-800.webp 800w, assets/img/dsc07442-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Torrija caramelizada con helado" loading="lazy" decoding="async"></figure><h3>Postres caseros <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
-      <li><a class="tile" href="el-restaurante.html#espacios"><figure class="ph ph--r45"><img src="assets/img/4e3a8251-800.webp" srcset="assets/img/4e3a8251-800.webp 800w, assets/img/4e3a8251-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Mesa de uno de nuestros salones junto a la ventana" loading="lazy" decoding="async"></figure><h3>Nuestros salones <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="carta#carnes"><figure class="ph ph--r45"><img src="assets/img/dsc07282-800.webp" srcset="assets/img/dsc07282-800.webp 800w, assets/img/dsc07282-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Chuletón sobre la parrilla" loading="lazy" decoding="async"></figure><h3>La brasa <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="carta#arroces"><figure class="ph ph--r45"><img src="assets/img/dsc07046-800.webp" srcset="assets/img/dsc07046-800.webp 800w, assets/img/dsc07046-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Arroz meloso de boletus recién hecho" loading="lazy" decoding="async"></figure><h3>Los arroces <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="carta#tierra"><figure class="ph ph--r45"><img src="assets/img/4e3a8357-800.webp" srcset="assets/img/4e3a8357-800.webp 800w, assets/img/4e3a8357-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Jamón ibérico de bellota cortado a cuchillo" loading="lazy" decoding="async"></figure><h3>La tierra <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="carta#bodega"><figure class="ph ph--r45"><img src="assets/img/dsc06961-800.webp" srcset="assets/img/dsc06961-800.webp 800w, assets/img/dsc06961-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Botellas de la bodega del restaurante" loading="lazy" decoding="async"></figure><h3>La bodega <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="carta#postres"><figure class="ph ph--r45"><img src="assets/img/dsc07442-800.webp" srcset="assets/img/dsc07442-800.webp 800w, assets/img/dsc07442-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Torrija caramelizada con helado" loading="lazy" decoding="async"></figure><h3>Postres caseros <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
+      <li><a class="tile" href="el-restaurante#espacios"><figure class="ph ph--r45"><img src="assets/img/4e3a8251-800.webp" srcset="assets/img/4e3a8251-800.webp 800w, assets/img/4e3a8251-1600.webp 1600w" sizes="(max-width: 899px) 50vw, 33vw" width="1600" height="2400" alt="Mesa de uno de nuestros salones junto a la ventana" loading="lazy" decoding="async"></figure><h3>Nuestros salones <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></h3></a></li>
     </ul>
   </div>
 </section>
@@ -143,7 +145,7 @@
           <li><h3>Wagyu</h3></li>
           <li><h3>Presa y pluma ibérica a la brasa</h3></li>
         </ul>
-        <a class="link" href="carta.html#carnes">Ver todas las carnes <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="carta#carnes">Ver todas las carnes <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </div>
@@ -155,17 +157,17 @@
       <div class="stack">
         <h2 id="carta-title" class="h2">De la tierra a la brasa</h2>
         <p class="lead">Pregunta por las sugerencias del día al reservar o en la mesa.</p>
-        <a class="btn" href="carta.html">Ver la carta completa <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" href="carta">Ver la carta completa <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <ol class="index-list">
-        <li><a href="carta.html#tierra"><span class="n">01</span><span class="t">Entrantes de la tierra</span><span class="c">5 platos</span></a></li>
-        <li><a href="carta.html#frios"><span class="n">02</span><span class="t">Entrantes fríos</span><span class="c">7 platos</span></a></li>
-        <li><a href="carta.html#calientes"><span class="n">03</span><span class="t">Calientes</span><span class="c">12 platos</span></a></li>
-        <li><a href="carta.html#pescados"><span class="n">04</span><span class="t">Pescados</span><span class="c">6 platos</span></a></li>
-        <li><a href="carta.html#carnes"><span class="n">05</span><span class="t">Carnes</span><span class="c">13 platos</span></a></li>
-        <li><a href="carta.html#arroces"><span class="n">06</span><span class="t">Nuestros arroces</span><span class="c">5 platos</span></a></li>
-        <li><a href="carta.html#postres"><span class="n">07</span><span class="t">Postres</span><span class="c">10 platos</span></a></li>
-        <li><a href="carta.html#bodega"><span class="n">08</span><span class="t">La bodega</span><span class="c">38 vinos</span></a></li>
+        <li><a href="carta#tierra"><span class="n">01</span><span class="t">Entrantes de la tierra</span><span class="c">5 platos</span></a></li>
+        <li><a href="carta#frios"><span class="n">02</span><span class="t">Entrantes fríos</span><span class="c">7 platos</span></a></li>
+        <li><a href="carta#calientes"><span class="n">03</span><span class="t">Calientes</span><span class="c">12 platos</span></a></li>
+        <li><a href="carta#pescados"><span class="n">04</span><span class="t">Pescados</span><span class="c">6 platos</span></a></li>
+        <li><a href="carta#carnes"><span class="n">05</span><span class="t">Carnes</span><span class="c">13 platos</span></a></li>
+        <li><a href="carta#arroces"><span class="n">06</span><span class="t">Nuestros arroces</span><span class="c">5 platos</span></a></li>
+        <li><a href="carta#postres"><span class="n">07</span><span class="t">Postres</span><span class="c">10 platos</span></a></li>
+        <li><a href="carta#bodega"><span class="n">08</span><span class="t">La bodega</span><span class="c">38 vinos</span></a></li>
       </ol>
     </div>
   </div>
@@ -178,7 +180,7 @@
         <h2 id="bodega-title" class="h2">La bodega</h2>
         <p class="prose">Treinta y ocho referencias con un sitio especial para Extremadura: Viña Puebla, Habla del Silencio, Haragán o Pentateuco, y el vino de la <strong>Cooperativa de Ribera del Fresno</strong>, el del pueblo.</p>
         <p class="prose">Para las carnes, Rioja y Ribera del Duero. Para brindar, cava y champagne.</p>
-        <a class="link" href="carta.html#bodega">Ver la bodega <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="carta#bodega">Ver la bodega <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <figure class="ph ph--r45"><img src="assets/img/dsc06962-800.webp" srcset="assets/img/dsc06962-800.webp 800w, assets/img/dsc06962-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 46vw" width="1600" height="2400" alt="Botellas de espumoso en el botellero de la bodega" loading="lazy" decoding="async"></figure>
     </div>
@@ -191,15 +193,15 @@
       <h2 id="salones-title" class="h2">Nuestros salones</h2>
       <div>
         <p class="lead">Comedor principal, salón privado y la bodega a la vista. Pide tu mesa favorita al reservar.</p>
-        <a class="link mt-s" href="el-restaurante.html#espacios">Conocer los salones <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link mt-s" href="el-restaurante#espacios">Conocer los salones <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </div>
   <div class="strip" role="list">
-    <a role="listitem" class="ph" href="el-restaurante.html#espacios"><img src="assets/img/4e3a8224-800.webp" srcset="assets/img/4e3a8224-800.webp 800w, assets/img/4e3a8224-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Escalera y sala con aplique de luz al fondo" loading="lazy" decoding="async"></a>
-    <a role="listitem" class="ph" href="el-restaurante.html#espacios"><img src="assets/img/4e3a8241-800.webp" srcset="assets/img/4e3a8241-800.webp 800w, assets/img/4e3a8241-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesa puesta delante del botellero" loading="lazy" decoding="async" style="object-position:center 55%"></a>
-    <a role="listitem" class="ph" href="el-restaurante.html#espacios"><img src="assets/img/dsc06941-800.webp" srcset="assets/img/dsc06941-800.webp 800w, assets/img/dsc06941-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesas de la sala con la luz cálida de la pared" loading="lazy" decoding="async"></a>
-    <a role="listitem" class="ph" href="el-restaurante.html#espacios"><img src="assets/img/4e3a8231-800.webp" srcset="assets/img/4e3a8231-800.webp 800w, assets/img/4e3a8231-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesa de mármol junto a la ventana del patio" loading="lazy" decoding="async" style="object-position:center 60%"></a>
+    <a role="listitem" class="ph" href="el-restaurante#espacios"><img src="assets/img/4e3a8224-800.webp" srcset="assets/img/4e3a8224-800.webp 800w, assets/img/4e3a8224-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Escalera y sala con aplique de luz al fondo" loading="lazy" decoding="async"></a>
+    <a role="listitem" class="ph" href="el-restaurante#espacios"><img src="assets/img/4e3a8241-800.webp" srcset="assets/img/4e3a8241-800.webp 800w, assets/img/4e3a8241-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesa puesta delante del botellero" loading="lazy" decoding="async" style="object-position:center 55%"></a>
+    <a role="listitem" class="ph" href="el-restaurante#espacios"><img src="assets/img/dsc06941-800.webp" srcset="assets/img/dsc06941-800.webp 800w, assets/img/dsc06941-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesas de la sala con la luz cálida de la pared" loading="lazy" decoding="async"></a>
+    <a role="listitem" class="ph" href="el-restaurante#espacios"><img src="assets/img/4e3a8231-800.webp" srcset="assets/img/4e3a8231-800.webp 800w, assets/img/4e3a8231-1600.webp 1600w" sizes="(max-width: 699px) 70vw, 25vw" width="1600" height="2400" alt="Mesa de mármol junto a la ventana del patio" loading="lazy" decoding="async" style="object-position:center 60%"></a>
   </div>
 </section>
 
@@ -225,7 +227,7 @@
       <div class="stack">
         <h2 id="historia-title" class="h2">La casa que marcó el pulso del pueblo</h2>
         <p class="prose">El restaurante toma su nombre de la Casa Solariega de los Britos, en el corazón de Ribera del Fresno. Fue casa de familia, casino y punto de encuentro de los vecinos. Desde diciembre de 2025, tras una reforma integral, vuelve a estar abierta al pueblo.</p>
-        <a class="link" href="el-restaurante.html#historia">Leer la historia <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="el-restaurante#historia">Leer la historia <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </div>
@@ -244,7 +246,7 @@
         <div data-days="4,5,6,0"><dt>Jueves a domingo</dt><dd>12:30 – 23:30</dd></div>
         <div data-days="1,2,3"><dt>Lunes a miércoles</dt><dd>Cerrado</dd></div>
       </dl>
-      <a class="link" href="reservas.html">Grupos y peticiones especiales <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="link" href="reservas">Grupos y peticiones especiales <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -253,7 +255,7 @@
   <div class="wrap to-britos__in">
     <img src="assets/logos/britos-logotipo-burdeos.png" alt="Britos Restauración &amp; Eventos" width="900" height="248" loading="lazy">
     <p>¿Una boda, un bautizo, una comunión o un catering? Lo organiza nuestro grupo de eventos.</p>
-    <a class="btn" href="eventos.html">Ir a Britos Eventos <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="btn" href="eventos">Ir a Britos Eventos <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
@@ -278,11 +280,11 @@
       </div>
       <div>
         <h2>El restaurante</h2>
-        <ul><li><a href="el-restaurante.html">El restaurante</a></li><li><a href="carta.html">La carta</a></li><li><a href="reservas.html">Reservas</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="blog.php">Blog</a></li><li><a href="https://www.instagram.com/casadelosbritos/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@casadelosbritos" target="_blank" rel="noopener">TikTok</a></li></ul>
+        <ul><li><a href="el-restaurante">El restaurante</a></li><li><a href="carta">La carta</a></li><li><a href="reservas">Reservas</a></li><li><a href="contacto">Contacto</a></li><li><a href="blog">Blog</a></li><li><a href="https://www.instagram.com/casadelosbritos/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@casadelosbritos" target="_blank" rel="noopener">TikTok</a></li></ul>
       </div>
     </div>
     <div class="footer__brands"><img src="assets/logos/eventos-nuestras-marcas-white.png" alt="Nuestras marcas: Café Hibernia, Restaurante Casa de los Britos, Ca·Nostra, Ribbo Restaurant y Bianco" width="1800" height="159" loading="lazy"></div>
-    <div class="footer__legal"><p>© <span data-year>2026</span> Casa de los Britos · Parte de <a href="eventos.html">Britos Restauración &amp; Eventos</a></p><p class="footer__links"><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="cookies.html">Cookies</a></p></div>
+    <div class="footer__legal"><p>© <span data-year>2026</span> Casa de los Britos · Parte de <a href="eventos">Britos Restauración &amp; Eventos</a></p><p class="footer__links"><a href="aviso-legal">Aviso legal</a> · <a href="privacidad">Privacidad</a> · <a href="cookies">Cookies</a></p></div>
   </div>
 </footer>
 <div class="callbar"><a class="btn btn--lg" href="tel:+34635824092"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Reservar · <span class="num">635 82 40 92</span></a></div>

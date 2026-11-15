@@ -37,7 +37,7 @@ function layout(string $title, string $content, bool $nav = true): void {
     <a href="./?a=blog"<?= in_array($cur, ['blog', 'edit'], true) ? ' aria-current="page"' : '' ?>>Blog</a>
     <a href="./?a=popup"<?= $cur === 'popup' ? ' aria-current="page"' : '' ?>>Ventana emergente</a>
     <a href="./?a=google"<?= $cur === 'google' ? ' aria-current="page"' : '' ?>>Reseñas de Google</a>
-    <a href="../index.html" target="_blank" rel="noopener">Ver la web</a>
+    <a href="../" target="_blank" rel="noopener">Ver la web</a>
     <form method="post" action="./?a=logout"><?= csrf_field() ?><button type="submit">Salir</button></form>
   </nav>
   <?php endif; ?>
@@ -259,7 +259,7 @@ if ($a === 'edit') {
   ob_start(); ?>
   <p><a class="ad-back" href="./?a=blog">← Volver al blog</a></p>
   <h1><?= $p['id'] ? 'Editar entrada' : 'Nueva entrada' ?></h1>
-  <?php if ($p['id'] && $p['published']): ?><p class="ad-muted">Publicada en <a href="../entrada.php?s=<?= e($p['slug']) ?>" target="_blank" rel="noopener">entrada.php?s=<?= e($p['slug']) ?></a></p><?php endif; ?>
+  <?php if ($p['id'] && $p['published']): ?><p class="ad-muted">Publicada en <a href="../blog/<?= e($p['slug']) ?>" target="_blank" rel="noopener">entrada.php?s=<?= e($p['slug']) ?></a></p><?php endif; ?>
   <form method="post" action="./?a=save" enctype="multipart/form-data" class="ad-form ad-card">
     <?= csrf_field() ?>
     <input type="hidden" name="id" value="<?= e($p['id']) ?>">
@@ -284,7 +284,7 @@ if ($a === 'edit') {
         <li><code>**negrita**</code>, <code>*cursiva*</code> y <code>[texto del enlace](https://…)</code>.</li>
       </ul>
     </details>
-    <div class="ad-actions"><button class="ad-btn" type="submit">Guardar</button><?php if ($p['id'] && $p['published']): ?><a class="ad-btn ad-btn--ghost" href="../entrada.php?s=<?= e($p['slug']) ?>" target="_blank" rel="noopener">Ver en la web</a><?php endif; ?></div>
+    <div class="ad-actions"><button class="ad-btn" type="submit">Guardar</button><?php if ($p['id'] && $p['published']): ?><a class="ad-btn ad-btn--ghost" href="../blog/<?= e($p['slug']) ?>" target="_blank" rel="noopener">Ver en la web</a><?php endif; ?></div>
   </form>
   <?php layout($p['id'] ? 'Editar entrada' : 'Nueva entrada', (string) ob_get_clean());
 }
