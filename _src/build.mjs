@@ -43,13 +43,12 @@ const NAV = {
     call: DATA.tel, callLabel: 'Reservar',
   },
   britos: {
-    brand: { href: 'eventos.html', img: 'assets/logos/britos-logotipo-burdeos.png', w: 900, h: 248, alt: 'Britos Restauración & Eventos', label: 'Britos Restauración & Eventos, inicio' },
+    brand: { href: 'eventos.html', img: 'assets/logos/britos-logotipo-burdeos.png', imgLight: 'assets/logos/eventos-logotipo-01-white.png', w: 900, h: 248, alt: 'Britos Restauración & Eventos', label: 'Britos Restauración & Eventos, inicio' },
     items: [
-      { href: '#bodas', key: 'bodas', label: 'Bodas', small: 'Celebrar' },
-      { href: '#bautizos', key: 'bautizos', label: 'Bautizos', small: 'Familia' },
-      { href: '#comuniones', key: 'comuniones', label: 'Comuniones', small: 'Familia' },
-      { href: '#catering', key: 'catering', label: 'Catering', small: 'En destino' },
-      { href: '#empresa', key: 'empresa', label: 'Empresa', small: 'Equipos' },
+      { href: '#grupo', key: 'grupo', label: 'El grupo', small: 'Quiénes' },
+      { href: '#marcas', key: 'marcas', label: 'Nuestras marcas', small: 'Locales' },
+      { href: '#celebraciones', key: 'celebraciones', label: 'Eventos', small: 'Celebrar' },
+      { href: '#galeria', key: 'galeria', label: 'Galería', small: 'Montajes' },
       { href: '#presupuesto', key: 'presupuesto', label: 'Presupuesto', small: 'Contacto' },
     ],
     out: { href: 'index.html', pillLabel: 'Restaurante', img: 'assets/logos/casa-logotipo-03.png', w: 800, h: 464, alt: 'Restaurante Casa de los Britos' },
@@ -95,7 +94,7 @@ function top(theme) {
   const status = theme === 'casa' ? '<span class="status top__status"><i></i><span data-live>Abrimos de jueves a domingo</span></span>' : '';
   const callText = theme === 'casa' ? 'Reservar' : 'Llamar';
   return `<header class="top" id="top">
-  <a class="top__brand" href="${n.brand.href}" aria-label="${n.brand.label}"><img src="${n.brand.img}" alt="${n.brand.alt}" width="${n.brand.w}" height="${n.brand.h}"></a>
+  <a class="top__brand" href="${n.brand.href}" aria-label="${n.brand.label}"><img src="${n.brand.img}" alt="${n.brand.alt}" width="${n.brand.w}" height="${n.brand.h}">${n.brand.imgLight ? `<img class="top__light" src="${n.brand.imgLight}" alt="" width="${n.brand.w}" height="${n.brand.h}">` : ''}</a>
   <div class="top__r">
     ${status}
     <a class="top__call" href="${n.call.href}" aria-label="${callText} · ${n.call.display}">${ico('phone')}<span>${callText}</span><span class="top__num">&nbsp;· <span class="num">${n.call.display}</span></span></a>
@@ -170,7 +169,7 @@ function footer(theme) {
       </div>
       <div>
         <h2>El grupo</h2>
-        <ul><li><a href="index.html">Restaurante Casa de los Britos</a></li><li><a href="#casas">Nuestras casas</a></li></ul>
+        <ul><li><a href="index.html">Restaurante Casa de los Britos</a></li><li><a href="#marcas">Nuestras marcas</a></li></ul>
       </div>
       <div>
         <h2>Síguenos</h2>
@@ -262,7 +261,7 @@ for (const file of fs.readdirSync(pagesDir).filter((f) => f.endsWith('.mjs'))) {
   const m = mod.meta;
   const body = mod.body({ DATA, im, ico });
   let html = `${m.phpTop || ""}${head(m).replace('</title>', `</title>\n${LOADER_HEAD}`)}
-<body data-theme="${m.theme}">
+<body data-theme="${m.theme}"${m.heroDark ? ' data-hero="dark"' : ''}>
 ${loader(m.theme)}
 ${SPRITE}
 <a class="skip" href="#main">Saltar al contenido</a>

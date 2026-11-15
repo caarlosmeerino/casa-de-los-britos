@@ -917,3 +917,109 @@ html.loader-out .loader { display: grid; }
   html.cursor-text .cursor__dot, html.cursor-text .cursor__ring { opacity: 0; }
 }
 @media (min-width: 600px) { .top__call { gap: 0; } }
+
+/* =====================================================================
+   Britos como grupo: portada a pantalla completa, marcas y eventos en filas
+   ===================================================================== */
+/* Cabecera clara sobre la foto de portada */
+.top__light { display: none; }
+body[data-hero="dark"] .top { --ink: var(--marfil); }
+body[data-hero="dark"] .top__brand img:not(.top__light) { display: none; }
+body[data-hero="dark"] .top__brand .top__light { display: block; }
+body[data-hero="dark"] .top .burger { border-color: rgba(255, 253, 244, 0.5); }
+@media (hover: hover) and (pointer: fine) { body[data-hero="dark"] .top .burger:hover { border-color: var(--marfil); } }
+@media (max-width: 599px) { body[data-hero="dark"] .top__call { background: var(--marfil); color: var(--britos); } }
+
+.ghero { position: relative; isolation: isolate; display: grid; align-items: end; min-height: 100svh; background: #1c0b0c; color: var(--marfil); overflow: hidden; }
+.ghero__media { position: absolute; inset: 0; z-index: -1; }
+.ghero__media .ph { position: absolute; inset: 0; border-radius: 0; background: #1c0b0c; }
+.ghero__media::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(22, 8, 9, 0.62) 0%, rgba(22, 8, 9, 0) 26%, rgba(22, 8, 9, 0) 40%, rgba(22, 8, 9, 0.55) 68%, rgba(22, 8, 9, 0.86) 100%); }
+.ghero .carousel__ui { left: max(var(--gutter), calc((100% - var(--wrap)) / 2)); right: max(var(--gutter), calc((100% - var(--wrap)) / 2)); bottom: clamp(20px, 3.5vh, 36px); justify-content: flex-end; gap: 8px; }
+.ghero__text { position: relative; padding-top: calc(var(--head-space) + 40px); padding-bottom: clamp(104px, 15vh, 150px); display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.ghero__kicker { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255, 253, 244, 0.86); }
+.ghero h1 { font-family: "Coliner", "Unageo", sans-serif; font-weight: 500; font-size: clamp(2.6rem, 1.2rem + 4.8vw, 6.2rem); line-height: 0.96; letter-spacing: -0.005em; text-transform: uppercase; color: var(--marfil); max-width: 13ch; text-wrap: balance; }
+.ghero__lead { font-size: var(--t-lead); line-height: 1.55; color: rgba(255, 253, 244, 0.88); max-width: 44ch; }
+.ghero__cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+.phone-pill--light { background: var(--marfil); color: var(--britos); }
+.phone-pill--light > span:first-child { background: var(--britos); color: var(--marfil); }
+.ghero__ghost { background: transparent; color: var(--marfil); border-color: rgba(255, 253, 244, 0.55); }
+@media (hover: hover) and (pointer: fine) {
+  .phone-pill--light:hover { background: #fff; }
+  .ghero__ghost:hover { background: rgba(255, 253, 244, 0.12); border-color: var(--marfil); color: var(--marfil); }
+}
+@media (max-width: 599px) {
+  .ghero__text { gap: 18px; padding-bottom: 96px; }
+  .ghero__cta, .ghero__cta > * { width: 100%; justify-content: center; }
+}
+.js [data-enter] .ghero__media .ph { animation: ghero-in 1800ms var(--ease-expo) both; }
+@keyframes ghero-in { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+
+/* Carrusel con fundido (en lugar de cortina) */
+.carousel--fade .slide, .carousel--fade[data-dir="prev"] .slide:not(.is-active):not(.is-leaving) { clip-path: none; opacity: 0; transform: scale(1.07); }
+.carousel--fade .slide.is-active, .carousel--fade .slide.is-leaving { opacity: 1; transform: scale(1); }
+.carousel--fade.is-ready .slide.is-active { transition: opacity 1200ms ease, transform 7000ms var(--ease-out); }
+
+/* Quiénes somos */
+.about__in { max-width: 860px; display: grid; justify-items: center; gap: 22px; text-align: center; }
+.about__kicker, .marca__type { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+.about__kicker { color: var(--muted); }
+.about__in p:not(.about__kicker) { font-size: var(--t-lead); line-height: 1.65; color: var(--texto-b); max-width: 60ch; }
+
+/* Nuestras marcas */
+.marcas { padding-top: 0 !important; }
+.marcas__title { text-align: center; margin-bottom: clamp(32px, 4vw, 56px); }
+.marcas__grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); }
+.marca { grid-column: span 2; }
+.marca:nth-child(n+4) { grid-column: span 3; }
+.marca > a, .marca > div { position: relative; display: block; height: 100%; aspect-ratio: 10 / 11; overflow: hidden; border-radius: 4px; background: #1c0b0c; color: var(--marfil); }
+.marca:nth-child(n+4) > a, .marca:nth-child(n+4) > div { aspect-ratio: 16 / 10; }
+.marca__ph { position: absolute; inset: 0; margin: 0; }
+.marca__ph img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.001); transition: transform 1100ms var(--ease-expo); }
+.marca__ph::after { content: ""; position: absolute; inset: 0; background: rgba(22, 8, 9, 0.52); transition: background-color 500ms ease; }
+.marca__over { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 24px; text-align: center; }
+.marca__logo { width: auto; height: clamp(70px, 5.6vw, 96px); filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.35)); }
+.marca__logo--hibernia { height: clamp(78px, 6.2vw, 106px); }
+.marca__rule { width: 34px; height: 1px; background: currentColor; opacity: 0.75; transition: width 500ms var(--ease-expo); }
+.marca__type { display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 253, 244, 0.92); }
+.marca__type .ico { width: 16px; height: 16px; transition: transform 300ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .marca:hover .marca__ph img { transform: scale(1.05); }
+  .marca:hover .marca__ph::after { background: rgba(22, 8, 9, 0.34); }
+  .marca:hover .marca__rule { width: 64px; }
+  .marca--link:hover .marca__type .ico { transform: translateX(4px); }
+}
+.marca > a:focus-visible { outline-offset: 4px; }
+@media (max-width: 1099px) {
+  .marcas__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .marca, .marca:nth-child(n+4) { grid-column: span 1; }
+  .marca:first-child { grid-column: 1 / -1; }
+  .marca > a, .marca > div, .marca:nth-child(n+4) > a, .marca:nth-child(n+4) > div { aspect-ratio: 4 / 3.6; }
+  .marca:first-child > a { aspect-ratio: 16 / 8; }
+}
+@media (max-width: 699px) {
+  .marcas__grid { grid-template-columns: minmax(0, 1fr); }
+  .marca > a, .marca > div, .marca:nth-child(n+4) > a, .marca:nth-child(n+4) > div, .marca:first-child > a { aspect-ratio: 4 / 3.3; }
+}
+
+/* Foto de ambiente a todo el ancho */
+.band { height: clamp(300px, 72vh, 760px); border-radius: 0; }
+
+/* Celebraciones en filas */
+.rows { border-top: 1px solid var(--line-strong); }
+.row { display: grid; grid-template-columns: 14px minmax(0, 4fr) minmax(0, 6fr) 200px; grid-template-areas: "chip title text cap"; gap: clamp(16px, 2.6vw, 44px); align-items: center; padding: clamp(22px, 3vw, 36px) 0; border-bottom: 1px solid var(--line-strong); scroll-margin-top: calc(var(--head-space) + 16px); }
+.row__chip { grid-area: chip; width: 14px; height: 46px; border-radius: 999px; background: var(--c); }
+.row h3 { grid-area: title; font-family: "Coliner", "Unageo", sans-serif; font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.4rem); font-weight: 500; line-height: 1.05; color: var(--britos); }
+.row > div:not(.row__cap) { grid-area: text; }
+.row p { color: var(--texto-b); }
+.row ul { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.row li { font-size: 0.875rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--britos); }
+.row__cap { grid-area: cap; position: relative; height: 92px; border-radius: 999px; overflow: hidden; background: var(--c); border: 3px solid var(--c); }
+.row__cap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-expo); }
+@media (hover: hover) and (pointer: fine) { .row:hover .row__cap img { transform: scale(1.06); } }
+@media (max-width: 899px) {
+  .row { grid-template-columns: 14px minmax(0, 1fr); grid-template-areas: "cap cap" "chip title" ". text"; row-gap: 14px; column-gap: 16px; }
+  .row__chip { height: 30px; }
+  .row__cap { height: 112px; }
+}
+@media (min-width: 900px) { .ghero__media::after { background: linear-gradient(90deg, rgba(22, 8, 9, 0.58) 0%, rgba(22, 8, 9, 0.2) 45%, rgba(22, 8, 9, 0) 70%), linear-gradient(180deg, rgba(22, 8, 9, 0.6) 0%, rgba(22, 8, 9, 0) 24%, rgba(22, 8, 9, 0) 48%, rgba(22, 8, 9, 0.75) 100%); } }
+.about { padding-bottom: clamp(56px, 7vw, 104px); }

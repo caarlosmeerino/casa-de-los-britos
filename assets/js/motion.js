@@ -18,7 +18,7 @@
     '.head > *', 'main .split > .stack > *', '.close__in > div > *', '.facts > div', '.timeline li', '.steps li',
     '.houses li', '.services .service', '.spaces .space > :not(figure)', '.tiles h3', '.index-list li',
     '.to-britos__in > *', '.menu-group__head > :not(figure)', '.menu-sub', '.contact-rows > *', 'main .hours > div',
-    '.statement + .link', '.form > .field', '.form__foot',
+    '.statement + .link', '.about__in > *', '.marcas__grid > li', '.rows > .row', '.form > .field', '.form__foot',
   ].join(',');
   const PHOTO = 'main .ph:not(.ph--pending)';
 
@@ -62,7 +62,7 @@
 
   /* ---------- Parallax en fotos grandes ---------- */
   const PAR = [
-    ['.hero__media .ph', 9], ['.gallery > .ph:first-child', 7], ['main .split > figure.ph', 6], ['.spaces .space .ph', 5],
+    ['.hero__media .ph', 9], ['.ghero__media .ph', 7], ['main .band', 10], ['.gallery > .ph:first-child', 7], ['main .split > figure.ph', 6], ['.spaces .space .ph', 5],
   ];
   const parEls = [];
   const preparePar = () => {
