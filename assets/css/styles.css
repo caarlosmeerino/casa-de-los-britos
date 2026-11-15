@@ -253,7 +253,7 @@ body[data-theme="britos"] .mlinks a[aria-current="page"] span { color: var(--mos
 .menu__foot b { display: block; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px; }
 .menu__foot a { display: inline-flex; align-items: center; min-height: 36px; }
 @media (hover: hover) and (pointer: fine) { .menu__foot a:hover { color: var(--ink); } }
-@media (prefers-reduced-motion: no-preference) {
+@media all {
   .mlinks li { opacity: 0; transform: translateY(14px); transition: opacity 240ms ease, transform 420ms var(--ease-out); }
   .menu.is-open .mlinks li { opacity: 1; transform: none; transition-delay: calc(140ms + var(--i, 0) * 45ms); }
 }
@@ -303,7 +303,7 @@ body[data-theme="casa"] .callbar .btn { background: var(--mantel); border-color:
   .hero__text { padding: 32px var(--gutter) 48px; gap: 28px; }
   .hero__cta .btn { width: 100%; }
 }
-@media (prefers-reduced-motion: no-preference) {
+@media all {
   .js [data-enter] .hero__media .ph { animation: reveal-clip 1000ms var(--ease-in-out) both; }
   .js [data-enter] .hero__media .ph img:not(.slide) { animation: reveal-img 1300ms var(--ease-out) both; }
   .js [data-enter] .enter { animation: enter-up 700ms var(--ease-out) both; animation-delay: calc(260ms + var(--i, 0) * 70ms); }
@@ -507,7 +507,7 @@ body[data-theme="britos"] .btn--ghost { border-color: var(--britos); color: var(
 .capsule--pizarra { --c: var(--pizarra); }
 .capsule--oliva { --c: var(--oliva); }
 @media (hover: hover) and (pointer: fine) { .capsule:hover { transform: translateY(-10px); } }
-@media (prefers-reduced-motion: no-preference) {
+@media all {
   .js .bhero[data-enter] .capsule { animation: capsule-in 900ms var(--ease-out) both; animation-delay: calc(220ms + var(--i, 0) * 90ms); }
   .js .bhero[data-enter] .enter { animation: enter-up 700ms var(--ease-out) both; animation-delay: calc(120ms + var(--i, 0) * 70ms); }
 }
@@ -546,9 +546,6 @@ body[data-theme="britos"] .btn--ghost { border-color: var(--britos); color: var(
 .houses a { color: var(--britos); font-size: 0.875rem; font-weight: 500; margin-top: auto; padding-top: 10px; min-height: 34px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line-strong); }
 @media (max-width: 999px) { .houses { grid-template-columns: 1fr 1fr; } }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-}
 
 /* =====================================================================
    Primor en los titulares del restaurante (la sección Britos usa Manrope,
@@ -587,7 +584,7 @@ body[data-theme="casa"] .h2 { font-size: clamp(2rem, 1.3rem + 2.3vw, 3.4rem); }
 .mag { transition: transform 160ms var(--ease-out); will-change: transform; }
 
 /* Entrada de la portada más suave */
-@media (prefers-reduced-motion: no-preference) {
+@media all {
   .js [data-enter] .hero__media .ph { animation: reveal-clip 1300ms var(--ease-io) both; }
   .js [data-enter] .enter { animation: enter-up 1000ms var(--ease-expo) both; animation-delay: calc(300ms + var(--i, 0) * 90ms); }
   .js .bhero[data-enter] .capsule { animation: capsule-in 1200ms var(--ease-expo) both; animation-delay: calc(250ms + var(--i, 0) * 110ms); }
@@ -603,11 +600,8 @@ body[data-theme="casa"] .h2 { font-size: clamp(2rem, 1.3rem + 2.3vw, 3.4rem); }
 @keyframes vt-out { to { opacity: 0; } }
 @keyframes vt-in { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
 
-@media (prefers-reduced-motion: reduce) {
-  .js .fx, .js .clip, .js .clip img, .statement .w { opacity: 1 !important; transform: none !important; clip-path: none !important; }
-  .par { top: 0; bottom: 0; transform: none !important; }
-  @view-transition { navigation: none; }
-}
+/* Con «menos movimiento» se quitan parallax, imanes e inercia (JS); las apariciones suaves se mantienen */
+@media (prefers-reduced-motion: reduce) { .par { top: 0; bottom: 0; transform: none !important; } }
 
 /* =====================================================================
    Carrusel de la portada
@@ -641,10 +635,6 @@ body[data-theme="casa"] .h2 { font-size: clamp(2rem, 1.3rem + 2.3vw, 3.4rem); }
 .carousel .ph { touch-action: pan-y; cursor: grab; }
 .carousel .ph:active { cursor: grabbing; }
 @media (max-width: 899px) { .carousel__dot { width: 36px; } .carousel__dot span { width: 22px; } }
-@media (prefers-reduced-motion: reduce) {
-  .carousel.is-ready .slide.is-active { transition: clip-path 1ms; }
-  .carousel__dot.is-active span::after { animation: none; transform: scaleX(1); }
-}
 
 /* =====================================================================
    Cabecera de inicio (transparente) → píldora al hacer scroll
@@ -673,7 +663,6 @@ body[data-theme="britos"] .top__brand img { height: clamp(34px, 1.6vw + 22px, 46
 /* La píldora espera fuera de la pantalla y baja al hacer scroll */
 .pill { transform: translate(-50%, calc(-100% - var(--pill-top) - 24px)); opacity: 0; transition: transform 700ms var(--ease-expo), opacity 260ms ease; }
 .pill.is-on { transform: translate(-50%, 0); opacity: 1; }
-@media (prefers-reduced-motion: reduce) { .pill { transition: opacity 200ms ease; } }
 
 /* Velo suave en lo alto de la foto para que la cabecera se lea sobre cualquier imagen */
 .hero__media::after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; top: 0; height: 42%; background: linear-gradient(to bottom, rgba(20, 14, 15, 0.82) 0%, rgba(20, 14, 15, 0.55) 35%, rgba(20, 14, 15, 0) 100%); pointer-events: none; }
@@ -820,12 +809,9 @@ body[data-theme="casa"] .mlinks a[aria-current="page"] span { font-weight: 400; 
 .mprev { transition: opacity 700ms ease, transform 1200ms var(--ease-expo); }
 .menu:not(.is-open) .mprev { opacity: 0; transform: scale(0.96); transition-duration: 250ms; }
 .menu.is-open .mprev { transition-delay: 420ms; }
-@media (prefers-reduced-motion: no-preference) {
+@media all {
   .mlinks li { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity 240ms ease, transform 300ms var(--ease-out); }
   .menu.is-open .mlinks li { opacity: 1; transform: none; transition: opacity 700ms ease, transform 900ms var(--ease-expo); transition-delay: calc(380ms + var(--i, 0) * 80ms); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .menu, .menu.is-open, .menu__head, .menu__foot, .mprev { transition-duration: 1ms !important; transition-delay: 0ms !important; }
 }
 /* Menú del restaurante en Unageo Light (elegida por el cliente) */
 body[data-theme="casa"] .mlinks span { font-family: "Unageo", "Manrope", sans-serif; font-weight: 300; letter-spacing: -0.01em; }
@@ -887,8 +873,4 @@ html.loader-quick .loader { opacity: 0; animation: loader-show 250ms ease 350ms 
 @keyframes loader-show { to { opacity: 1; } }
 /* La entrada de la portada espera a que se vaya la pantalla de carga */
 html.is-loading [data-enter], html.is-loading [data-enter] * { animation-play-state: paused !important; }
-@media (prefers-reduced-motion: reduce) {
-  .loader__mark, .loader__line i { animation: none; }
-  .loader__line i { transform: none; opacity: 0.6; }
-}
 html.loader-out .loader { display: grid; }

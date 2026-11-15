@@ -1,7 +1,6 @@
 /* Carrusel de la portada: cortina lateral, autoplay con pausa, deslizar con el dedo y flechas del teclado */
 (() => {
   'use strict';
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   document.querySelectorAll('[data-carousel]').forEach((root) => {
@@ -16,7 +15,7 @@
     let index = 0;
     let z = slides.length;
     let timer = null;
-    let userPaused = reduce; // con movimiento reducido no avanza solo
+    let userPaused = false;
     let hoverPaused = false;
     let busy = false;
 
@@ -73,7 +72,7 @@
       });
       index = next;
       const done = () => { prev.classList.remove('is-leaving'); busy = false; };
-      setTimeout(done, reduce ? 30 : 1250);
+      setTimeout(done, 1250);
       schedule();
     };
 

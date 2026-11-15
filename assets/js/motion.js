@@ -143,7 +143,6 @@
   };
 
   const start = () => {
-    if (reduce) { prepareWords(); words.forEach((o) => o.ws.forEach((w) => w.classList.add('on'))); return; }
     prepare();
     preparePar();
     prepareWords();
