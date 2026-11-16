@@ -48,7 +48,7 @@ const NAV = {
       { href: '#grupo', key: 'grupo', label: 'El grupo', small: 'Quiénes' },
       { href: '#marcas', key: 'marcas', label: 'Nuestras marcas', small: 'Locales' },
       { href: '#celebraciones', key: 'celebraciones', label: 'Eventos', small: 'Celebrar' },
-      { href: '#galeria', key: 'galeria', label: 'Galería', small: 'Montajes' },
+      { href: '#como', key: 'como', label: 'Cómo trabajamos', small: 'Pasos' },
       { href: '#presupuesto', key: 'presupuesto', label: 'Presupuesto', small: 'Contacto' },
     ],
     out: { href: 'index.html', pillLabel: 'Restaurante', img: 'assets/logos/casa-logotipo-03.png', w: 800, h: 464, alt: 'Restaurante Casa de los Britos' },
@@ -59,7 +59,7 @@ const NAV = {
 const ico = (id, cls = 'ico') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
 
 function head(m) {
-  const theme = m.theme === 'britos' ? '#fffdf4' : '#140e0f';
+  const theme = m.theme === 'britos' ? '#ffffff' : '#140e0f';
   const icon = m.theme === 'britos' ? 'assets/logos/britos-favicon.png' : 'assets/logos/casa-logo-completo.png';
   const pre = m.preload ? `<link rel="preload" as="image" href="assets/img/${m.preload}-1600.webp" imagesrcset="assets/img/${m.preload}-800.webp 800w, assets/img/${m.preload}-1600.webp 1600w" imagesizes="(max-width: 899px) 100vw, 58vw">` : '';
   return `<!doctype html>

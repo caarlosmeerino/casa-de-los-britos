@@ -1027,3 +1027,98 @@ body[data-hero="dark"] .top .burger { border-color: rgba(255, 253, 244, 0.5); }
 .ghero__media::after { background: linear-gradient(180deg, rgba(22, 8, 9, 0.7) 0%, rgba(22, 8, 9, 0.42) 22%, rgba(22, 8, 9, 0.55) 40%, rgba(22, 8, 9, 0.82) 62%, rgba(22, 8, 9, 0.92) 100%); }
 @media (min-width: 900px) { .ghero__media::after { background: linear-gradient(90deg, rgba(22, 8, 9, 0.78) 0%, rgba(22, 8, 9, 0.5) 42%, rgba(22, 8, 9, 0.12) 72%, rgba(22, 8, 9, 0) 100%), linear-gradient(180deg, rgba(22, 8, 9, 0.6) 0%, rgba(22, 8, 9, 0.1) 24%, rgba(22, 8, 9, 0.1) 48%, rgba(22, 8, 9, 0.8) 100%); } }
 .ghero h1, .ghero__lead, .ghero__kicker { text-shadow: 0 1px 18px rgba(22, 8, 9, 0.45); }
+
+/* =====================================================================
+   Britos minimalista: blanco y negro en toda la página.
+   El color se reserva a las celebraciones (bodas, comuniones, bautizos…)
+   ===================================================================== */
+:root { --evento-britos: #4a1416; }
+body[data-theme="britos"] {
+  --marfil: #ffffff;
+  --marfil-2: #ffffff;
+  --britos: #0a0a0a;
+  --britos-2: #2a2a2a;
+  --texto-b: #3a3a3a;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f2f2f2;
+  --ink: #0a0a0a;
+  --muted: #6b6b6b;
+  --line: rgba(0, 0, 0, 0.1);
+  --line-strong: rgba(0, 0, 0, 0.22);
+  --accent: #0a0a0a;
+  --accent-ink: #ffffff;
+  --accent-hover: #2a2a2a;
+  --focus: #0a0a0a;
+  --pill-bg: rgba(255, 255, 255, 0.86);
+  --menu-bg: #ffffff;
+}
+/* Logos burdeos → negro */
+body[data-theme="britos"] img:is([src*="burdeos"], [src$="britos-icono.png"]) { filter: brightness(0); }
+body[data-theme="britos"] .pill { box-shadow: 0 1px 0 var(--line); }
+body[data-theme="britos"] .menu { background-image: none; }
+body[data-theme="britos"] .mlinks a[aria-current="page"] span { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { body[data-theme="britos"] .mlinks a:hover span { color: var(--muted); } }
+body[data-theme="britos"] .mprev img { filter: grayscale(1); }
+body[data-theme="britos"] .btn, body[data-theme="britos"] .phone-pill { border-radius: 0; }
+body[data-theme="britos"] .phone-pill > span:first-child { border-radius: 0; }
+body[data-theme="britos"] .h2 { text-transform: uppercase; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem); letter-spacing: 0.01em; }
+body[data-theme="britos"] .section { padding-block: clamp(72px, 9vw, 128px); }
+
+/* Portada: fotos en blanco y negro, velo negro neutro */
+body[data-theme="britos"] .ghero { background: #000; color: #fff; }
+body[data-theme="britos"] .ghero__media .ph { background: #000; }
+body[data-theme="britos"] .ghero__media img { filter: grayscale(1) contrast(1.05); }
+body[data-theme="britos"] .ghero__media::after { background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 35%, rgba(0, 0, 0, 0.7) 100%); }
+body[data-theme="britos"] .ghero h1, body[data-theme="britos"] .ghero__kicker { text-shadow: none; }
+body[data-theme="britos"] .ghero h1 { font-size: clamp(2.4rem, 1.2rem + 4vw, 5.2rem); }
+body[data-theme="britos"] .phone-pill--light { background: #fff; color: #000; }
+body[data-theme="britos"] .phone-pill--light > span:first-child { background: #000; color: #fff; }
+body[data-theme="britos"] .ghero__ghost { border-color: rgba(255, 255, 255, 0.6); }
+
+/* Quiénes somos */
+body[data-theme="britos"] .about__in { max-width: 720px; gap: 18px; }
+body[data-theme="britos"] .about__in p:not(.about__kicker) { font-size: var(--t-body); color: var(--muted); }
+
+/* Marcas: fotos en gris, sin redondeos */
+body[data-theme="britos"] .marcas__grid { gap: 2px; }
+body[data-theme="britos"] .marca > a, body[data-theme="britos"] .marca > div { border-radius: 0; background: #000; color: #fff; }
+body[data-theme="britos"] .marca__ph img { filter: grayscale(1); }
+body[data-theme="britos"] .marca__ph::after { background: rgba(0, 0, 0, 0.55); }
+body[data-theme="britos"] .marca__logo { filter: none; }
+@media (hover: hover) and (pointer: fine) { body[data-theme="britos"] .marca:hover .marca__ph::after { background: rgba(0, 0, 0, 0.4); } }
+
+/* Celebraciones: la rama con color */
+.ev__head { display: grid; justify-items: center; gap: 14px; text-align: center; margin-bottom: clamp(32px, 4vw, 56px); }
+.ev__grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; }
+.evc { grid-column: span 3; display: flex; flex-direction: column; background: var(--c); color: #fff; scroll-margin-top: calc(var(--head-space) + 16px); }
+.evc:nth-child(n+3) { grid-column: span 2; }
+.evc__ph { position: relative; aspect-ratio: 16 / 10; overflow: hidden; margin: 0; }
+.evc__ph img { width: 100%; height: 100%; object-fit: cover; transition: transform 1100ms var(--ease-expo); }
+.evc__txt { display: grid; gap: 10px; padding: clamp(22px, 2.4vw, 34px); }
+.evc h3 { font-family: "Coliner", "Unageo", sans-serif; font-weight: 500; font-size: clamp(1.4rem, 1.1rem + 0.9vw, 2rem); line-height: 1.05; text-transform: uppercase; color: #fff; }
+.evc p { color: rgba(255, 255, 255, 0.88); }
+.evc__list { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72) !important; }
+@media (hover: hover) and (pointer: fine) { .evc:hover .evc__ph img { transform: scale(1.05); } }
+@media (max-width: 1099px) {
+  .ev__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .evc, .evc:nth-child(n+3) { grid-column: span 1; }
+  .evc:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 699px) {
+  .ev__grid { grid-template-columns: minmax(0, 1fr); }
+  .evc:last-child { grid-column: auto; }
+}
+
+/* Cómo trabajamos: líneas finas y números */
+.steps--min { border-top: 0; }
+body[data-theme="britos"] .steps--min .n { width: auto; height: auto; border-radius: 0; background: none; color: var(--muted); font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.14em; place-items: start; }
+.steps--min li { padding-top: 22px; }
+body[data-theme="britos"] .steps--min h3 { color: var(--ink); text-transform: uppercase; font-size: 1rem; letter-spacing: 0.06em; margin-top: 12px; }
+.steps--min p { color: var(--muted); }
+
+/* Presupuesto */
+body[data-theme="britos"] .pres { border-top: 1px solid var(--line); }
+body[data-theme="britos"] .form-panel { background: #fff; border: 1px solid var(--line-strong); border-radius: 0; box-shadow: none; }
+body[data-theme="britos"] .input { border-radius: 0; }
+body[data-theme="britos"] .footer__brands img { opacity: 0.85; }

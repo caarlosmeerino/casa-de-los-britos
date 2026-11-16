@@ -12,6 +12,15 @@ const SLIDES = [
   ['hibernia-02', 'Interior del Café Hibernia con la H iluminada y sillas de terciopelo verde', 'center 50%', 'Café Hibernia'],
 ];
 
+// Celebraciones: la única parte de la página con color
+const EVENTOS = [
+  { id: 'bodas', t: 'Bodas', c: 'var(--mostaza)', img: 'britos-montaje-01', pos: 'center 60%', p: 'Banquete, cóctel y barra libre, en salón o al aire libre.', l: ['Cóctel y banquete', 'Barra libre y recena', 'Montaje de mesa'] },
+  { id: 'comuniones', t: 'Comuniones', c: 'var(--pizarra)', img: 'ribbo-03', pos: 'center 50%', p: 'Menús de adulto e infantil en salones pensados para familias.', l: ['Menú infantil', 'Salón privado', 'Tarta y sobremesa'] },
+  { id: 'bautizos', t: 'Bautizos y celebraciones', c: 'var(--capsula-burdeos)', img: 'hibernia-02', pos: 'center 50%', p: 'Cumpleaños, aniversarios, bautizos y reuniones familiares.', l: ['Salones privados', 'Menús cerrados', 'Coctelería'] },
+  { id: 'catering', t: 'Catering', c: 'var(--oliva)', img: 'britos-eventos-01', pos: 'center 40%', p: 'Llevamos cocina y servicio a fincas, casas y espacios propios.', l: ['Cocina en destino', 'Personal de sala', 'Menaje y mobiliario'] },
+  { id: 'empresa', t: 'Empresa', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
+];
+
 // Nuestras marcas: foto del local con su logo encima
 const MARCAS = [
   { k: 'casa', name: 'Casa de los Britos', type: 'Restaurante', img: 'dsc06935', alt: 'Comedor de Casa de los Britos', pos: 'center 55%', href: 'index.html', w: 382 },
@@ -42,8 +51,7 @@ export const body = ({ DATA, im, ico }) => `
   <div class="ghero__text wrap">
     <p class="ghero__kicker enter" style="--i:0">Ribera del Fresno · Tierra de Barros</p>
     <h1 id="ev-title" class="enter" style="--i:1">Grupo de restauración y eventos</h1>
-    <p class="ghero__lead enter" style="--i:2">Cinco locales y un mismo equipo para bodas, bautizos, comuniones, catering y eventos de empresa.</p>
-    <div class="ghero__cta enter" style="--i:3">
+    <div class="ghero__cta enter" style="--i:2">
       <a class="phone-pill phone-pill--light" href="${DATA.telGrupos.href}"><span>${ico('phone')}</span><span class="num">${DATA.telGrupos.display}</span></a>
       <a class="btn btn--lg ghero__ghost" href="#presupuesto">Pedir presupuesto</a>
     </div>
@@ -54,8 +62,7 @@ export const body = ({ DATA, im, ico }) => `
   <div class="wrap about__in">
     <p class="about__kicker">El grupo</p>
     <h2 id="grupo-title" class="h2">Cinco casas, un mismo equipo</h2>
-    <p>Empezamos con Casa de los Britos, en Ribera del Fresno. Después llegaron Ribbo, Ca·Nostra, el Café Hibernia y Bianco: cinco locales distintos, cada uno con su carácter, y la misma gente detrás de la cocina y la sala.</p>
-    <p>Ese equipo es el que prepara vuestras celebraciones, en cualquiera de nuestros espacios o en la finca que elijáis.</p>
+    <p>Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y Bianco. Cinco locales con carácter propio y la misma gente detrás de la cocina y la sala, también en vuestras celebraciones.</p>
   </div>
 </section>
 
@@ -76,88 +83,41 @@ export const body = ({ DATA, im, ico }) => `
   </div>
 </section>
 
-<figure class="band ph" aria-hidden="true">${im('canostra-02', '', { sizes: '100vw', big: true, pos: 'center 72%' })}</figure>
-
-<section class="section" id="celebraciones" aria-labelledby="cel-title">
+<section class="section ev" id="celebraciones" aria-labelledby="cel-title">
   <div class="wrap">
-    <div class="head">
+    <div class="ev__head">
+      <p class="about__kicker">Eventos</p>
       <h2 id="cel-title" class="h2">Celebraciones a medida</h2>
-      <p class="lead">El mismo equipo de cocina y sala para cada tipo de evento, desde el primer menú hasta la recena.</p>
     </div>
-    <div class="rows">
-      <article class="row" id="bodas" style="--c:var(--mostaza)">
-        <span class="row__chip" aria-hidden="true"></span>
-        <h3>Bodas</h3>
-        <div><p>Banquete, cóctel de bienvenida y barra libre, en salón o al aire libre.</p>
-          <ul><li>Cóctel y banquete</li><li>Barra libre y recena</li><li>Montaje y decoración de mesa</li></ul></div>
-        <div class="row__cap" aria-hidden="true">${im('britos-montaje-01', '', { sizes: '200px', pos: 'center 60%' })}</div>
-      </article>
-      <article class="row" id="bautizos" style="--c:var(--capsula-burdeos)">
-        <span class="row__chip" aria-hidden="true"></span>
-        <h3>Bautizos y celebraciones</h3>
-        <div><p>Cumpleaños, aniversarios, bautizos y reuniones familiares.</p>
-          <ul><li>Salones privados</li><li>Menús cerrados</li><li>Coctelería en Bianco y Hibernia</li></ul></div>
-        <div class="row__cap" aria-hidden="true">${im('hibernia-02', '', { sizes: '200px', pos: 'center 50%' })}</div>
-      </article>
-      <article class="row" id="comuniones" style="--c:var(--pizarra)">
-        <span class="row__chip" aria-hidden="true"></span>
-        <h3>Comuniones</h3>
-        <div><p>Menús de adulto e infantil, en salones pensados para familias.</p>
-          <ul><li>Menú infantil</li><li>Salón privado</li><li>Tarta y sobremesa</li></ul></div>
-        <div class="row__cap" aria-hidden="true">${im('ribbo-03', '', { sizes: '200px', pos: 'center 50%' })}</div>
-      </article>
-      <article class="row" id="catering" style="--c:var(--oliva)">
-        <span class="row__chip" aria-hidden="true"></span>
-        <h3>Catering</h3>
-        <div><p>Llevamos cocina y servicio a fincas, casas y espacios propios.</p>
-          <ul><li>Cocina en destino</li><li>Personal de sala</li><li>Menaje y mobiliario</li></ul></div>
-        <div class="row__cap" aria-hidden="true">${im('britos-eventos-01', '', { sizes: '200px', pos: 'center 40%' })}</div>
-      </article>
-      <article class="row" id="empresa" style="--c:var(--britos)">
-        <span class="row__chip" aria-hidden="true"></span>
-        <h3>Empresa</h3>
-        <div><p>Comidas de equipo, cenas de Navidad y presentaciones.</p>
-          <ul><li>Menús de grupo</li><li>Facturación a empresa</li><li>Espacios para presentaciones</li></ul></div>
-        <div class="row__cap" aria-hidden="true">${im('ribbo-02', '', { sizes: '200px', pos: 'center 40%' })}</div>
-      </article>
-    </div>
+    <ul class="ev__grid">
+      ${EVENTOS.map((e) => `<li class="evc" id="${e.id}" style="--c:${e.c}">
+        <figure class="evc__ph">${im(e.img, '', { sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw', pos: e.pos })}</figure>
+        <div class="evc__txt">
+          <h3>${e.t}</h3>
+          <p>${e.p}</p>
+          <p class="evc__list">${e.l.join(' · ')}</p>
+        </div>
+      </li>`).join('\n      ')}
+    </ul>
   </div>
 </section>
 
-<section class="section section--surface" id="como" aria-labelledby="como-title">
+<section class="section" id="como" aria-labelledby="como-title">
   <div class="wrap">
-    <div class="head">
+    <div class="ev__head">
+      <p class="about__kicker">Cómo trabajamos</p>
       <h2 id="como-title" class="h2">Una sola persona de principio a fin</h2>
-      <p class="lead">Te asignamos a alguien del equipo que lleva tu evento entero: menú, espacio, montaje y servicio.</p>
     </div>
-    <ol class="steps">
-      <li><span class="n">1</span><h3>Nos cuentas la idea</h3><p>Fecha, invitados y tipo de celebración.</p></li>
-      <li><span class="n">2</span><h3>Elegimos el espacio</h3><p>Uno de nuestros locales o tu propia finca.</p></li>
-      <li><span class="n">3</span><h3>Prueba de menú</h3><p>Cerramos el menú contigo, con opciones para alergias.</p></li>
-      <li><span class="n">4</span><h3>El gran día</h3><p>Montaje, cocina y servicio a cargo de nuestro equipo.</p></li>
+    <ol class="steps steps--min">
+      <li><span class="n">01</span><h3>La idea</h3><p>Fecha, invitados y tipo de celebración.</p></li>
+      <li><span class="n">02</span><h3>El espacio</h3><p>Uno de nuestros locales o tu propia finca.</p></li>
+      <li><span class="n">03</span><h3>El menú</h3><p>Prueba de menú, con opciones para alergias.</p></li>
+      <li><span class="n">04</span><h3>El día</h3><p>Montaje, cocina y servicio de nuestro equipo.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="section" id="galeria" aria-labelledby="gal-title">
-  <div class="wrap">
-    <div class="head">
-      <h2 id="gal-title" class="h2">Montajes y eventos</h2>
-      <p class="lead">Algunas de las celebraciones que hemos preparado.</p>
-    </div>
-    <!-- PENDIENTE: fotos de bautizos, comuniones y eventos de empresa (mínimo 1600 px de ancho) -->
-    <div class="gallery">
-      <figure class="ph">${im('britos-montaje-01', 'Mesas redondas vestidas con mantelería de lino, cristalería y centros de flores de otoño en una carpa', { sizes: '(max-width: 699px) 100vw, 50vw', pos: 'center 55%' })}</figure>
-      <figure class="ph">${im('britos-eventos-01', 'Camarero de Britos con delantal bordado sirviendo aperitivos', { sizes: '(max-width: 699px) 50vw, 50vw', pos: 'center 40%' })}</figure>
-      <figure class="ph">${im('bianco-02', 'Fiesta en la terraza de Bianco con bengalas en la barra', { sizes: '(max-width: 699px) 50vw, 50vw', pos: 'center 45%' })}</figure>
-      <figure class="ph">${im('ribbo-02', 'Mojitos preparándose en la barra de Ribbo', { sizes: '(max-width: 699px) 50vw, 33vw', pos: 'center 50%' })}</figure>
-      <figure class="ph">${im('canostra-01', 'Barra de Ca·Nostra con copas colgadas', { sizes: '(max-width: 699px) 50vw, 33vw', pos: 'center 40%' })}</figure>
-      <figure class="ph">${im('hibernia-02', 'Salón del Café Hibernia', { sizes: '(max-width: 699px) 100vw, 33vw', pos: 'center 50%' })}</figure>
-    </div>
-  </div>
-</section>
-
-<section class="section section--surface" id="presupuesto" aria-labelledby="pres-title">
+<section class="section pres" id="presupuesto" aria-labelledby="pres-title">
   <div class="wrap">
     <div class="split split--top">
       <div class="stack">
@@ -165,7 +125,7 @@ export const body = ({ DATA, im, ico }) => `
         <p class="lead">Rellena estos datos y te llamamos para hablar del evento. Si lo prefieres, llámanos directamente.</p>
         <a class="phone-pill" href="${DATA.telGrupos.href}"><span>${ico('phone')}</span><span class="num">${DATA.telGrupos.display}</span></a>
       </div>
-      <form class="form form-panel" style="background:var(--marfil)" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
+      <form class="form form-panel" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
         <div class="field"><label for="e-tipo">Tipo de evento</label><select class="input" id="e-tipo" name="tipo" required aria-describedby="e-tipo-err"><option value="">Elige una opción</option><option>Boda</option><option>Bautizo</option><option>Comunión</option><option>Catering</option><option>Evento de empresa</option><option>Celebración familiar</option><option>Otro</option></select><p class="error" id="e-tipo-err">Elige el tipo de evento.</p></div>
         <div class="field"><label for="e-fecha">Fecha estimada</label><input class="input" id="e-fecha" name="fecha" type="text" placeholder="Por ejemplo, mayo de 2027" required aria-describedby="e-fecha-err"><p class="error" id="e-fecha-err">Indica una fecha aproximada, aunque sea el mes.</p></div>
         <div class="field"><label for="e-invitados">Invitados aproximados</label><input class="input" id="e-invitados" name="invitados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Por ejemplo, 120" required aria-describedby="e-invitados-err"><p class="error" id="e-invitados-err">Indica un número aproximado de invitados.</p></div>
@@ -173,7 +133,7 @@ export const body = ({ DATA, im, ico }) => `
         <div class="field"><label for="e-nombre">Nombre</label><input class="input" id="e-nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="e-nombre-err"><p class="error" id="e-nombre-err">Escribe tu nombre.</p></div>
         <div class="field"><label for="e-tel">Teléfono de contacto</label><input class="input" id="e-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +()\\-]{9,}" required aria-describedby="e-tel-err"><p class="error" id="e-tel-err">Escribe un teléfono de al menos 9 cifras.</p></div>
         <div class="field field--full"><label for="e-mensaje">Algo más que debamos saber <span class="hint">(opcional)</span></label><textarea class="input" id="e-mensaje" name="mensaje"></textarea></div>
-        <div class="field field--full"><label class="check" for="e-priv"><input id="e-priv" name="privacidad" type="checkbox" required aria-describedby="e-priv-err"> He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y el <a href="aviso-legal.html" target="_blank" rel="noopener">Aviso legal</a>.</label><p class="error" id="e-priv-err">Necesitamos que aceptes la política de privacidad para preparar el presupuesto.</p></div>
+        <div class="field field--full"><label class="check" for="e-priv"><input id="e-priv" name="privacidad" type="checkbox" required aria-describedby="e-priv-err"> <span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de privacidad</a> y el <a href="aviso-legal.html" target="_blank" rel="noopener">Aviso legal</a>.</span></label><p class="error" id="e-priv-err">Necesitamos que aceptes la política de privacidad para preparar el presupuesto.</p></div>
         <p class="form__info field--full"><strong>Protección de datos.</strong> Responsable: el titular de Britos Restauración &amp; Eventos. Finalidad: preparar y enviarte tu presupuesto. Legitimación: tu consentimiento. Destinatarios: no se ceden a terceros, salvo obligación legal. Derechos: acceso, rectificación, supresión y otros, como explica la <a href="privacidad.html">Política de privacidad</a>.</p>
         <div class="form__foot"><button class="btn btn--lg" type="submit">Pedir presupuesto</button></div>
         <p class="form__status" role="status" hidden></p>
