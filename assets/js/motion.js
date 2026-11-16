@@ -18,7 +18,7 @@
     '.head > *', 'main .split > .stack > *', '.close__in > div > *', '.facts > div', '.timeline li', '.steps li',
     '.houses li', '.services .service', '.spaces .space > :not(figure)', '.tiles h3', '.index-list li',
     '.to-britos__in > *', '.menu-group__head > :not(figure)', '.menu-sub', '.contact-rows > *', 'main .hours > div',
-    '.statement + .link', '.about__in > *', '.marcas__grid > li', '.rows > .row', '.form > .field', '.form__foot',
+    '.statement + .link', '.about__in > *', '.marcas__grid > li', '.rows > .row', '.form > .field', '.form__foot', '.bx-r',
   ].join(',');
   const PHOTO = 'main .ph:not(.ph--pending)';
 

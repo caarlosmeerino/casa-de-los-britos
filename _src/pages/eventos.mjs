@@ -1,131 +1,94 @@
 export const meta = {
-  out: 'eventos.html', theme: 'britos', current: '', heroDark: true, preload: 'britos-montaje-01', og: 'britos-eventos-01',
+  out: 'eventos.html', theme: 'britos', current: '', preload: 'britos-montaje-01', og: 'britos-eventos-01',
   title: 'Britos Restauración & Eventos · Bodas, bautizos, comuniones y catering',
   description: 'Grupo de restauración y eventos en Ribera del Fresno: Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y Bianco. Bodas, bautizos, comuniones y catering. Tel. 609 75 16 47.',
 };
 
-// Portada: fotos de eventos y de los locales del grupo
-const SLIDES = [
-  ['britos-montaje-01', 'Mesas redondas vestidas con mantelería de lino, cristalería y flores en una carpa', 'center 58%', 'Montaje de boda'],
-  ['bianco-02', 'Terraza de Bianco llena de gente, con bengalas encendidas en la barra', 'center 45%', 'Noche en Bianco'],
-  ['ribbo-01', 'Barra de Ribbo Restaurant con clientes y taburetes de cuero', 'center 50%', 'Barra de Ribbo'],
-  ['hibernia-02', 'Interior del Café Hibernia con la H iluminada y sillas de terciopelo verde', 'center 50%', 'Café Hibernia'],
-];
-
-// Celebraciones: la única parte de la página con color
+// Celebraciones: lo único de la página que lleva color
 const EVENTOS = [
-  { id: 'bodas', t: 'Bodas', c: 'var(--mostaza)', img: 'britos-montaje-01', pos: 'center 60%', p: 'Banquete, cóctel y barra libre, en salón o al aire libre.', l: ['Cóctel y banquete', 'Barra libre y recena', 'Montaje de mesa'] },
-  { id: 'comuniones', t: 'Comuniones', c: 'var(--pizarra)', img: 'ribbo-03', pos: 'center 50%', p: 'Menús de adulto e infantil en salones pensados para familias.', l: ['Menú infantil', 'Salón privado', 'Tarta y sobremesa'] },
-  { id: 'bautizos', t: 'Bautizos y celebraciones', c: 'var(--capsula-burdeos)', img: 'hibernia-02', pos: 'center 50%', p: 'Cumpleaños, aniversarios, bautizos y reuniones familiares.', l: ['Salones privados', 'Menús cerrados', 'Coctelería'] },
-  { id: 'catering', t: 'Catering', c: 'var(--oliva)', img: 'britos-eventos-01', pos: 'center 40%', p: 'Llevamos cocina y servicio a fincas, casas y espacios propios.', l: ['Cocina en destino', 'Personal de sala', 'Menaje y mobiliario'] },
-  { id: 'empresa', t: 'Empresa', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
+  { id: 'bodas', t: 'Bodas', w: 'bodas', c: 'var(--mostaza)', img: 'britos-montaje-01', pos: 'center 60%', p: 'Banquete, cóctel y barra libre, en salón o al aire libre.', l: ['Cóctel y banquete', 'Barra libre y recena', 'Montaje de mesa'] },
+  { id: 'comuniones', t: 'Comuniones', w: 'comuniones', c: 'var(--pizarra)', img: 'ribbo-03', pos: 'center 50%', p: 'Menús de adulto e infantil, en salones pensados para familias.', l: ['Menú infantil', 'Salón privado', 'Tarta y sobremesa'] },
+  { id: 'bautizos', t: 'Bautizos', w: 'bautizos', c: 'var(--capsula-burdeos)', img: 'hibernia-02', pos: 'center 50%', p: 'Bautizos, cumpleaños, aniversarios y reuniones familiares.', l: ['Salones privados', 'Menús cerrados', 'Coctelería'] },
+  { id: 'catering', t: 'Catering', w: 'catering', c: 'var(--oliva)', img: 'britos-eventos-01', pos: 'center 40%', p: 'Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.', l: ['Cocina en destino', 'Personal de sala', 'Menaje y mobiliario'] },
+  { id: 'empresa', t: 'Empresa', w: 'empresas', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
 ];
 
-// Nuestras marcas: foto del local con su logo encima
+// Nuestras casas: lista tipográfica; la foto asoma al pasar el ratón
 const MARCAS = [
-  { k: 'casa', name: 'Casa de los Britos', type: 'Restaurante', img: 'dsc06935', alt: 'Comedor de Casa de los Britos', pos: 'center 55%', href: 'index.html', w: 382 },
-  { k: 'ribbo', name: 'Ribbo Restaurant', type: 'Restaurante', img: 'ribbo-03', alt: 'Salón de Ribbo con mesas altas y espejo redondo iluminado', pos: 'center 55%', w: 367 },
-  { k: 'canostra', name: 'Ca·Nostra', type: 'Bar y restaurante', img: 'canostra-01', alt: 'Barra de Ca·Nostra con su letrero y copas colgadas', pos: 'center 35%', w: 320 },
-  { k: 'hibernia', name: 'Café Hibernia', type: 'Café y copas', img: 'hibernia-01', alt: 'Fachada y terraza del Café Hibernia al atardecer', pos: 'center 55%', w: 146 },
-  { k: 'bianco', name: 'Bianco', type: 'Terraza', img: 'bianco-01', alt: 'Terraza de Bianco de noche, llena de gente', pos: 'center 40%', w: 290 },
+  { name: 'Casa de los Britos', type: 'Restaurante', img: 'dsc06935', href: 'index.html' },
+  { name: 'Ribbo', type: 'Restaurante', img: 'ribbo-03' },
+  { name: 'Ca·Nostra', type: 'Bar y restaurante', img: 'canostra-01' },
+  { name: 'Café Hibernia', type: 'Café y copas', img: 'hibernia-01' },
+  { name: 'Bianco', type: 'Terraza', img: 'bianco-01' },
 ];
+
+const pad = (n) => String(n).padStart(2, '0');
 
 export const body = ({ DATA, im, ico }) => `
-<section class="ghero" data-enter aria-labelledby="ev-title">
-  <div class="ghero__media carousel carousel--fade" data-carousel data-interval="6000" role="region" aria-roledescription="carrusel" aria-label="Fotos de eventos y de nuestros locales">
-    <figure class="ph">
-      <div class="slides">
-        ${SLIDES.map(([name, alt, pos], i) => im(name, alt, { sizes: '100vw', eager: i === 0, big: true, pos }).replace('<img ', `<img class="slide${i === 0 ? ' is-active' : ''}" data-i="${i}" aria-hidden="${i === 0 ? 'false' : 'true'}" `)).join('\n        ')}
-      </div>
-    </figure>
-    <div class="carousel__ui">
-      <div class="carousel__dots">
-        ${SLIDES.map(([, , , label], i) => `<button type="button" class="carousel__dot${i === 0 ? ' is-active' : ''}" data-go="${i}" aria-label="Foto ${i + 1} de ${SLIDES.length}: ${label}"${i === 0 ? ' aria-current="true"' : ''}><span></span></button>`).join('')}
-      </div>
-      <button type="button" class="carousel__pause" data-pause aria-label="Pausar el carrusel" aria-pressed="false">
-        <svg class="ico ico--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-        <svg class="ico ico--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-      </button>
+<section class="bx-hero" aria-labelledby="ev-title">
+  <div class="bx-hero__meta wrap"><span>Restauración &amp; Eventos</span><span>Ribera del Fresno · Tierra de Barros</span></div>
+  <h1 id="ev-title" class="bx-hero__word"><span class="sr-only">Britos Restauración &amp; Eventos</span><span aria-hidden="true">Britos</span></h1>
+  <div class="bx-hero__foot wrap">
+    <p class="bx-hero__line">Celebramos <span class="sr-only">bodas, comuniones, bautizos, catering y eventos de empresa</span><span class="bx-tick" aria-hidden="true"><span class="bx-tick__in">${[...EVENTOS, EVENTOS[0]].map((e) => `<span style="color:${e.c}">${e.w}</span>`).join('')}</span></span></p>
+    <div class="bx-hero__cta">
+      <a class="bx-link" href="#presupuesto">Pedir presupuesto ${ico('arrow')}</a>
+      <a class="bx-link" href="${DATA.telGrupos.href}">${ico('phone')}<span class="num">${DATA.telGrupos.display}</span></a>
     </div>
   </div>
-  <div class="ghero__text wrap">
-    <p class="ghero__kicker enter" style="--i:0">Ribera del Fresno · Tierra de Barros</p>
-    <h1 id="ev-title" class="enter" style="--i:1">Grupo de restauración y eventos</h1>
-    <div class="ghero__cta enter" style="--i:2">
-      <a class="phone-pill phone-pill--light" href="${DATA.telGrupos.href}"><span>${ico('phone')}</span><span class="num">${DATA.telGrupos.display}</span></a>
-      <a class="btn btn--lg ghero__ghost" href="#presupuesto">Pedir presupuesto</a>
-    </div>
-  </div>
+  <figure class="bx-hero__ph">${im('britos-montaje-01', 'Mesas de banquete vestidas con mantelería de lino, cristalería y flores en una carpa', { sizes: '100vw', eager: true, big: true, pos: 'center 58%' })}</figure>
 </section>
 
-<section class="section about" id="grupo" aria-labelledby="grupo-title">
-  <div class="wrap about__in">
-    <p class="about__kicker">El grupo</p>
-    <h2 id="grupo-title" class="h2">Cinco casas, un mismo equipo</h2>
-    <p>Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y Bianco. Cinco locales con carácter propio y la misma gente detrás de la cocina y la sala, también en vuestras celebraciones.</p>
-  </div>
-</section>
-
-<section class="section marcas" id="marcas" aria-labelledby="marcas-title">
+<section class="bx-sec" id="grupo" aria-labelledby="grupo-title">
   <div class="wrap">
-    <h2 id="marcas-title" class="h2 marcas__title">Nuestras marcas</h2>
-    <ul class="marcas__grid">
-      ${MARCAS.map((m) => {
-        const inner = `<figure class="marca__ph">${im(m.img, m.alt, { sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw', pos: m.pos })}</figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--${m.k}" src="assets/logos/marca-${m.k}-white.png" alt="${m.name}" width="${m.w}" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">${m.type}${m.href ? ` ${ico('arrow')}` : ''}</span>
-        </div>`;
-        return `<li class="marca${m.href ? ' marca--link' : ''}">${m.href ? `<a href="${m.href}" aria-label="${m.name}, ${m.type.toLowerCase()}: ver su web">${inner}</a>` : `<div>${inner}</div>`}</li>`;
+    <p class="bx-k bx-r">01 — El grupo</p>
+    <h2 id="grupo-title" class="bx-statement bx-r">Cinco casas. Un mismo equipo. <em>Cada celebración, a medida.</em></h2>
+  </div>
+</section>
+
+<section class="bx-sec bx-sec--tight" id="marcas" aria-labelledby="marcas-title">
+  <div class="wrap">
+    <h2 id="marcas-title" class="bx-k bx-r">02 — Nuestras casas</h2>
+    <ul class="bx-list">
+      ${MARCAS.map((m, i) => {
+        const inner = `<span class="bx-list__n">${pad(i + 1)}</span><span class="bx-list__name">${m.name}</span><span class="bx-list__type">${m.type}${m.href ? ` ${ico('arrow')}` : ''}</span><span class="bx-list__img" aria-hidden="true">${im(m.img, '', { sizes: '280px' })}</span>`;
+        return `<li class="bx-r">${m.href ? `<a class="bx-list__row" href="${m.href}">${inner}</a>` : `<div class="bx-list__row">${inner}</div>`}</li>`;
       }).join('\n      ')}
     </ul>
   </div>
 </section>
 
-<section class="section ev" id="celebraciones" aria-labelledby="cel-title">
-  <div class="wrap">
-    <div class="ev__head">
-      <p class="about__kicker">Eventos</p>
-      <h2 id="cel-title" class="h2">Celebraciones a medida</h2>
+<section class="bx-ev" id="celebraciones" aria-labelledby="cel-title">
+  <div class="wrap"><h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2></div>
+  ${EVENTOS.map((e, i) => `<article class="bx-card" id="${e.id}" style="--c:${e.c}">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">${pad(i + 1)} / ${pad(EVENTOS.length)}</span>
+      <h3 class="bx-card__t">${e.t}</h3>
+      <div class="bx-card__txt"><p>${e.p}</p><p class="bx-card__l">${e.l.join(' · ')}</p></div>
+      <figure class="bx-card__ph">${im(e.img, '', { sizes: '(max-width: 899px) 100vw, 40vw', pos: e.pos })}</figure>
     </div>
-    <ul class="ev__grid">
-      ${EVENTOS.map((e) => `<li class="evc" id="${e.id}" style="--c:${e.c}">
-        <figure class="evc__ph">${im(e.img, '', { sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw', pos: e.pos })}</figure>
-        <div class="evc__txt">
-          <h3>${e.t}</h3>
-          <p>${e.p}</p>
-          <p class="evc__list">${e.l.join(' · ')}</p>
-        </div>
-      </li>`).join('\n      ')}
-    </ul>
-  </div>
+  </article>`).join('\n  ')}
 </section>
 
-<section class="section" id="como" aria-labelledby="como-title">
+<section class="bx-sec" id="como" aria-labelledby="como-title">
   <div class="wrap">
-    <div class="ev__head">
-      <p class="about__kicker">Cómo trabajamos</p>
-      <h2 id="como-title" class="h2">Una sola persona de principio a fin</h2>
-    </div>
-    <ol class="steps steps--min">
-      <li><span class="n">01</span><h3>La idea</h3><p>Fecha, invitados y tipo de celebración.</p></li>
-      <li><span class="n">02</span><h3>El espacio</h3><p>Uno de nuestros locales o tu propia finca.</p></li>
-      <li><span class="n">03</span><h3>El menú</h3><p>Prueba de menú, con opciones para alergias.</p></li>
-      <li><span class="n">04</span><h3>El día</h3><p>Montaje, cocina y servicio de nuestro equipo.</p></li>
+    <h2 id="como-title" class="bx-k bx-r">04 — Cómo trabajamos</h2>
+    <p class="bx-statement bx-r">Una sola persona del equipo lleva tu evento de principio a fin.</p>
+    <ol class="bx-steps">
+      <li class="bx-r"><span>01</span>La idea</li>
+      <li class="bx-r"><span>02</span>El espacio</li>
+      <li class="bx-r"><span>03</span>El menú</li>
+      <li class="bx-r"><span>04</span>El día</li>
     </ol>
   </div>
 </section>
 
-<section class="section pres" id="presupuesto" aria-labelledby="pres-title">
+<section class="bx-end" id="presupuesto" aria-labelledby="pres-title">
   <div class="wrap">
-    <div class="split split--top">
-      <div class="stack">
-        <h2 id="pres-title" class="h2">Cuéntanos tu celebración</h2>
-        <p class="lead">Rellena estos datos y te llamamos para hablar del evento. Si lo prefieres, llámanos directamente.</p>
-        <a class="phone-pill" href="${DATA.telGrupos.href}"><span>${ico('phone')}</span><span class="num">${DATA.telGrupos.display}</span></a>
-      </div>
-      <form class="form form-panel" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
+    <p class="bx-k">05 — Hablemos</p>
+    <h2 id="pres-title" class="bx-end__t">¿Lo celebramos?</h2>
+    <a class="bx-end__tel num" href="${DATA.telGrupos.href}">${DATA.telGrupos.display}</a>
+    <p class="bx-end__or">O cuéntanos tu celebración y te llamamos:</p>
+    <form class="form form-panel" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
         <div class="field"><label for="e-tipo">Tipo de evento</label><select class="input" id="e-tipo" name="tipo" required aria-describedby="e-tipo-err"><option value="">Elige una opción</option><option>Boda</option><option>Bautizo</option><option>Comunión</option><option>Catering</option><option>Evento de empresa</option><option>Celebración familiar</option><option>Otro</option></select><p class="error" id="e-tipo-err">Elige el tipo de evento.</p></div>
         <div class="field"><label for="e-fecha">Fecha estimada</label><input class="input" id="e-fecha" name="fecha" type="text" placeholder="Por ejemplo, mayo de 2027" required aria-describedby="e-fecha-err"><p class="error" id="e-fecha-err">Indica una fecha aproximada, aunque sea el mes.</p></div>
         <div class="field"><label for="e-invitados">Invitados aproximados</label><input class="input" id="e-invitados" name="invitados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Por ejemplo, 120" required aria-describedby="e-invitados-err"><p class="error" id="e-invitados-err">Indica un número aproximado de invitados.</p></div>
@@ -138,7 +101,6 @@ export const body = ({ DATA, im, ico }) => `
         <div class="form__foot"><button class="btn btn--lg" type="submit">Pedir presupuesto</button></div>
         <p class="form__status" role="status" hidden></p>
       </form>
-    </div>
   </div>
 </section>
 `;

@@ -16,13 +16,13 @@
 <link rel="preload" href="assets/fonts/unageo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/coliner-medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/britos-montaje-01-1600.webp" imagesrcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" imagesizes="(max-width: 899px) 100vw, 58vw">
-<link rel="stylesheet" href="assets/css/styles.css?v=5b785531">
+<link rel="stylesheet" href="assets/css/styles.css?v=e9ea8440">
 <script src="assets/js/main.js?v=a32b78e7" defer></script>
-<script src="assets/js/motion.js?v=c73606e4" defer></script>
+<script src="assets/js/motion.js?v=11d99c30" defer></script>
 <script src="assets/js/carousel.js?v=3fe8a7d3" defer></script>
 <script src="assets/js/cursor.js?v=483a7f32" defer></script>
 </head>
-<body data-theme="britos" data-hero="dark">
+<body data-theme="britos">
 <div class="loader" aria-hidden="true"><img class="loader__mark" src="assets/logos/britos-icono.png" alt="" width="256" height="256"><span class="loader__line"><i></i></span></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
@@ -72,157 +72,103 @@
 </div>
 <main id="main">
 
-<section class="ghero" data-enter aria-labelledby="ev-title">
-  <div class="ghero__media carousel carousel--fade" data-carousel data-interval="6000" role="region" aria-roledescription="carrusel" aria-label="Fotos de eventos y de nuestros locales">
-    <figure class="ph">
-      <div class="slides">
-        <img class="slide is-active" data-i="0" aria-hidden="false" src="assets/img/britos-montaje-01-1600.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="100vw" width="1206" height="1844" alt="Mesas redondas vestidas con mantelería de lino, cristalería y flores en una carpa" fetchpriority="high" style="object-position:center 58%">
-        <img class="slide" data-i="1" aria-hidden="true" src="assets/img/bianco-02-1600.webp" srcset="assets/img/bianco-02-800.webp 800w, assets/img/bianco-02-1600.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Terraza de Bianco llena de gente, con bengalas encendidas en la barra" loading="lazy" decoding="async" style="object-position:center 45%">
-        <img class="slide" data-i="2" aria-hidden="true" src="assets/img/ribbo-01-1600.webp" srcset="assets/img/ribbo-01-800.webp 800w, assets/img/ribbo-01-1600.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Barra de Ribbo Restaurant con clientes y taburetes de cuero" loading="lazy" decoding="async" style="object-position:center 50%">
-        <img class="slide" data-i="3" aria-hidden="true" src="assets/img/hibernia-02-1600.webp" srcset="assets/img/hibernia-02-800.webp 800w, assets/img/hibernia-02-1600.webp 1600w" sizes="100vw" width="1600" height="1067" alt="Interior del Café Hibernia con la H iluminada y sillas de terciopelo verde" loading="lazy" decoding="async" style="object-position:center 50%">
-      </div>
-    </figure>
-    <div class="carousel__ui">
-      <div class="carousel__dots">
-        <button type="button" class="carousel__dot is-active" data-go="0" aria-label="Foto 1 de 4: Montaje de boda" aria-current="true"><span></span></button><button type="button" class="carousel__dot" data-go="1" aria-label="Foto 2 de 4: Noche en Bianco"><span></span></button><button type="button" class="carousel__dot" data-go="2" aria-label="Foto 3 de 4: Barra de Ribbo"><span></span></button><button type="button" class="carousel__dot" data-go="3" aria-label="Foto 4 de 4: Café Hibernia"><span></span></button>
-      </div>
-      <button type="button" class="carousel__pause" data-pause aria-label="Pausar el carrusel" aria-pressed="false">
-        <svg class="ico ico--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-        <svg class="ico ico--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-      </button>
+<section class="bx-hero" aria-labelledby="ev-title">
+  <div class="bx-hero__meta wrap"><span>Restauración &amp; Eventos</span><span>Ribera del Fresno · Tierra de Barros</span></div>
+  <h1 id="ev-title" class="bx-hero__word"><span class="sr-only">Britos Restauración &amp; Eventos</span><span aria-hidden="true">Britos</span></h1>
+  <div class="bx-hero__foot wrap">
+    <p class="bx-hero__line">Celebramos <span class="sr-only">bodas, comuniones, bautizos, catering y eventos de empresa</span><span class="bx-tick" aria-hidden="true"><span class="bx-tick__in"><span style="color:var(--mostaza)">bodas</span><span style="color:var(--pizarra)">comuniones</span><span style="color:var(--capsula-burdeos)">bautizos</span><span style="color:var(--oliva)">catering</span><span style="color:var(--evento-britos)">empresas</span><span style="color:var(--mostaza)">bodas</span></span></span></p>
+    <div class="bx-hero__cta">
+      <a class="bx-link" href="#presupuesto">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="bx-link" href="tel:+34609751647"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="num">609 75 16 47</span></a>
     </div>
   </div>
-  <div class="ghero__text wrap">
-    <p class="ghero__kicker enter" style="--i:0">Ribera del Fresno · Tierra de Barros</p>
-    <h1 id="ev-title" class="enter" style="--i:1">Grupo de restauración y eventos</h1>
-    <div class="ghero__cta enter" style="--i:2">
-      <a class="phone-pill phone-pill--light" href="tel:+34609751647"><span><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="num">609 75 16 47</span></a>
-      <a class="btn btn--lg ghero__ghost" href="#presupuesto">Pedir presupuesto</a>
-    </div>
-  </div>
+  <figure class="bx-hero__ph"><img src="assets/img/britos-montaje-01-1600.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="100vw" width="1206" height="1844" alt="Mesas de banquete vestidas con mantelería de lino, cristalería y flores en una carpa" fetchpriority="high" style="object-position:center 58%"></figure>
 </section>
 
-<section class="section about" id="grupo" aria-labelledby="grupo-title">
-  <div class="wrap about__in">
-    <p class="about__kicker">El grupo</p>
-    <h2 id="grupo-title" class="h2">Cinco casas, un mismo equipo</h2>
-    <p>Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y Bianco. Cinco locales con carácter propio y la misma gente detrás de la cocina y la sala, también en vuestras celebraciones.</p>
-  </div>
-</section>
-
-<section class="section marcas" id="marcas" aria-labelledby="marcas-title">
+<section class="bx-sec" id="grupo" aria-labelledby="grupo-title">
   <div class="wrap">
-    <h2 id="marcas-title" class="h2 marcas__title">Nuestras marcas</h2>
-    <ul class="marcas__grid">
-      <li class="marca marca--link"><a href="./" aria-label="Casa de los Britos, restaurante: ver su web"><figure class="marca__ph"><img src="assets/img/dsc06935-800.webp" srcset="assets/img/dsc06935-800.webp 800w, assets/img/dsc06935-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="2400" alt="Comedor de Casa de los Britos" loading="lazy" decoding="async" style="object-position:center 55%"></figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--casa" src="assets/logos/marca-casa-white.png" alt="Casa de los Britos" width="382" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">Restaurante <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </div></a></li>
-      <li class="marca"><div><figure class="marca__ph"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="1066" alt="Salón de Ribbo con mesas altas y espejo redondo iluminado" loading="lazy" decoding="async" style="object-position:center 55%"></figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--ribbo" src="assets/logos/marca-ribbo-white.png" alt="Ribbo Restaurant" width="367" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">Restaurante</span>
-        </div></div></li>
-      <li class="marca"><div><figure class="marca__ph"><img src="assets/img/canostra-01-800.webp" srcset="assets/img/canostra-01-800.webp 800w, assets/img/canostra-01-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="2400" alt="Barra de Ca·Nostra con su letrero y copas colgadas" loading="lazy" decoding="async" style="object-position:center 35%"></figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--canostra" src="assets/logos/marca-canostra-white.png" alt="Ca·Nostra" width="320" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">Bar y restaurante</span>
-        </div></div></li>
-      <li class="marca"><div><figure class="marca__ph"><img src="assets/img/hibernia-01-800.webp" srcset="assets/img/hibernia-01-800.webp 800w, assets/img/hibernia-01-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="1067" alt="Fachada y terraza del Café Hibernia al atardecer" loading="lazy" decoding="async" style="object-position:center 55%"></figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--hibernia" src="assets/logos/marca-hibernia-white.png" alt="Café Hibernia" width="146" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">Café y copas</span>
-        </div></div></li>
-      <li class="marca"><div><figure class="marca__ph"><img src="assets/img/bianco-01-800.webp" srcset="assets/img/bianco-01-800.webp 800w, assets/img/bianco-01-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="1067" alt="Terraza de Bianco de noche, llena de gente" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
-        <div class="marca__over">
-          <img class="marca__logo marca__logo--bianco" src="assets/logos/marca-bianco-white.png" alt="Bianco" width="290" height="240" loading="lazy">
-          <span class="marca__rule" aria-hidden="true"></span>
-          <span class="marca__type">Terraza</span>
-        </div></div></li>
+    <p class="bx-k bx-r">01 — El grupo</p>
+    <h2 id="grupo-title" class="bx-statement bx-r">Cinco casas. Un mismo equipo. <em>Cada celebración, a medida.</em></h2>
+  </div>
+</section>
+
+<section class="bx-sec bx-sec--tight" id="marcas" aria-labelledby="marcas-title">
+  <div class="wrap">
+    <h2 id="marcas-title" class="bx-k bx-r">02 — Nuestras casas</h2>
+    <ul class="bx-list">
+      <li class="bx-r"><a class="bx-list__row" href="./"><span class="bx-list__n">01</span><span class="bx-list__name">Casa de los Britos</span><span class="bx-list__type">Restaurante <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span><span class="bx-list__img" aria-hidden="true"><img src="assets/img/dsc06935-800.webp" srcset="assets/img/dsc06935-800.webp 800w, assets/img/dsc06935-1600.webp 1600w" sizes="280px" width="1600" height="2400" alt="" loading="lazy" decoding="async"></span></a></li>
+      <li class="bx-r"><div class="bx-list__row"><span class="bx-list__n">02</span><span class="bx-list__name">Ribbo</span><span class="bx-list__type">Restaurante</span><span class="bx-list__img" aria-hidden="true"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="280px" width="1600" height="1066" alt="" loading="lazy" decoding="async"></span></div></li>
+      <li class="bx-r"><div class="bx-list__row"><span class="bx-list__n">03</span><span class="bx-list__name">Ca·Nostra</span><span class="bx-list__type">Bar y restaurante</span><span class="bx-list__img" aria-hidden="true"><img src="assets/img/canostra-01-800.webp" srcset="assets/img/canostra-01-800.webp 800w, assets/img/canostra-01-1600.webp 1600w" sizes="280px" width="1600" height="2400" alt="" loading="lazy" decoding="async"></span></div></li>
+      <li class="bx-r"><div class="bx-list__row"><span class="bx-list__n">04</span><span class="bx-list__name">Café Hibernia</span><span class="bx-list__type">Café y copas</span><span class="bx-list__img" aria-hidden="true"><img src="assets/img/hibernia-01-800.webp" srcset="assets/img/hibernia-01-800.webp 800w, assets/img/hibernia-01-1600.webp 1600w" sizes="280px" width="1600" height="1067" alt="" loading="lazy" decoding="async"></span></div></li>
+      <li class="bx-r"><div class="bx-list__row"><span class="bx-list__n">05</span><span class="bx-list__name">Bianco</span><span class="bx-list__type">Terraza</span><span class="bx-list__img" aria-hidden="true"><img src="assets/img/bianco-01-800.webp" srcset="assets/img/bianco-01-800.webp 800w, assets/img/bianco-01-1600.webp 1600w" sizes="280px" width="1600" height="1067" alt="" loading="lazy" decoding="async"></span></div></li>
     </ul>
   </div>
 </section>
 
-<section class="section ev" id="celebraciones" aria-labelledby="cel-title">
-  <div class="wrap">
-    <div class="ev__head">
-      <p class="about__kicker">Eventos</p>
-      <h2 id="cel-title" class="h2">Celebraciones a medida</h2>
+<section class="bx-ev" id="celebraciones" aria-labelledby="cel-title">
+  <div class="wrap"><h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2></div>
+  <article class="bx-card" id="bodas" style="--c:var(--mostaza)">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">01 / 05</span>
+      <h3 class="bx-card__t">Bodas</h3>
+      <div class="bx-card__txt"><p>Banquete, cóctel y barra libre, en salón o al aire libre.</p><p class="bx-card__l">Cóctel y banquete · Barra libre y recena · Montaje de mesa</p></div>
+      <figure class="bx-card__ph"><img src="assets/img/britos-montaje-01-800.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1206" height="1844" alt="" loading="lazy" decoding="async" style="object-position:center 60%"></figure>
     </div>
-    <ul class="ev__grid">
-      <li class="evc" id="bodas" style="--c:var(--mostaza)">
-        <figure class="evc__ph"><img src="assets/img/britos-montaje-01-800.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1206" height="1844" alt="" loading="lazy" decoding="async" style="object-position:center 60%"></figure>
-        <div class="evc__txt">
-          <h3>Bodas</h3>
-          <p>Banquete, cóctel y barra libre, en salón o al aire libre.</p>
-          <p class="evc__list">Cóctel y banquete · Barra libre y recena · Montaje de mesa</p>
-        </div>
-      </li>
-      <li class="evc" id="comuniones" style="--c:var(--pizarra)">
-        <figure class="evc__ph"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="1066" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
-        <div class="evc__txt">
-          <h3>Comuniones</h3>
-          <p>Menús de adulto e infantil en salones pensados para familias.</p>
-          <p class="evc__list">Menú infantil · Salón privado · Tarta y sobremesa</p>
-        </div>
-      </li>
-      <li class="evc" id="bautizos" style="--c:var(--capsula-burdeos)">
-        <figure class="evc__ph"><img src="assets/img/hibernia-02-800.webp" srcset="assets/img/hibernia-02-800.webp 800w, assets/img/hibernia-02-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="1067" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
-        <div class="evc__txt">
-          <h3>Bautizos y celebraciones</h3>
-          <p>Cumpleaños, aniversarios, bautizos y reuniones familiares.</p>
-          <p class="evc__list">Salones privados · Menús cerrados · Coctelería</p>
-        </div>
-      </li>
-      <li class="evc" id="catering" style="--c:var(--oliva)">
-        <figure class="evc__ph"><img src="assets/img/britos-eventos-01-800.webp" srcset="assets/img/britos-eventos-01-800.webp 800w, assets/img/britos-eventos-01-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1365" height="2000" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
-        <div class="evc__txt">
-          <h3>Catering</h3>
-          <p>Llevamos cocina y servicio a fincas, casas y espacios propios.</p>
-          <p class="evc__list">Cocina en destino · Personal de sala · Menaje y mobiliario</p>
-        </div>
-      </li>
-      <li class="evc" id="empresa" style="--c:var(--evento-britos)">
-        <figure class="evc__ph"><img src="assets/img/ribbo-02-800.webp" srcset="assets/img/ribbo-02-800.webp 800w, assets/img/ribbo-02-1600.webp 1600w" sizes="(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 34vw" width="1600" height="2400" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
-        <div class="evc__txt">
-          <h3>Empresa</h3>
-          <p>Comidas de equipo, cenas de Navidad y presentaciones.</p>
-          <p class="evc__list">Menús de grupo · Facturación a empresa · Presentaciones</p>
-        </div>
-      </li>
-    </ul>
-  </div>
+  </article>
+  <article class="bx-card" id="comuniones" style="--c:var(--pizarra)">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">02 / 05</span>
+      <h3 class="bx-card__t">Comuniones</h3>
+      <div class="bx-card__txt"><p>Menús de adulto e infantil, en salones pensados para familias.</p><p class="bx-card__l">Menú infantil · Salón privado · Tarta y sobremesa</p></div>
+      <figure class="bx-card__ph"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="1066" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
+    </div>
+  </article>
+  <article class="bx-card" id="bautizos" style="--c:var(--capsula-burdeos)">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">03 / 05</span>
+      <h3 class="bx-card__t">Bautizos</h3>
+      <div class="bx-card__txt"><p>Bautizos, cumpleaños, aniversarios y reuniones familiares.</p><p class="bx-card__l">Salones privados · Menús cerrados · Coctelería</p></div>
+      <figure class="bx-card__ph"><img src="assets/img/hibernia-02-800.webp" srcset="assets/img/hibernia-02-800.webp 800w, assets/img/hibernia-02-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="1067" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
+    </div>
+  </article>
+  <article class="bx-card" id="catering" style="--c:var(--oliva)">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">04 / 05</span>
+      <h3 class="bx-card__t">Catering</h3>
+      <div class="bx-card__txt"><p>Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.</p><p class="bx-card__l">Cocina en destino · Personal de sala · Menaje y mobiliario</p></div>
+      <figure class="bx-card__ph"><img src="assets/img/britos-eventos-01-800.webp" srcset="assets/img/britos-eventos-01-800.webp 800w, assets/img/britos-eventos-01-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1365" height="2000" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
+    </div>
+  </article>
+  <article class="bx-card" id="empresa" style="--c:var(--evento-britos)">
+    <div class="wrap bx-card__in">
+      <span class="bx-card__n">05 / 05</span>
+      <h3 class="bx-card__t">Empresa</h3>
+      <div class="bx-card__txt"><p>Comidas de equipo, cenas de Navidad y presentaciones.</p><p class="bx-card__l">Menús de grupo · Facturación a empresa · Presentaciones</p></div>
+      <figure class="bx-card__ph"><img src="assets/img/ribbo-02-800.webp" srcset="assets/img/ribbo-02-800.webp 800w, assets/img/ribbo-02-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="2400" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
+    </div>
+  </article>
 </section>
 
-<section class="section" id="como" aria-labelledby="como-title">
+<section class="bx-sec" id="como" aria-labelledby="como-title">
   <div class="wrap">
-    <div class="ev__head">
-      <p class="about__kicker">Cómo trabajamos</p>
-      <h2 id="como-title" class="h2">Una sola persona de principio a fin</h2>
-    </div>
-    <ol class="steps steps--min">
-      <li><span class="n">01</span><h3>La idea</h3><p>Fecha, invitados y tipo de celebración.</p></li>
-      <li><span class="n">02</span><h3>El espacio</h3><p>Uno de nuestros locales o tu propia finca.</p></li>
-      <li><span class="n">03</span><h3>El menú</h3><p>Prueba de menú, con opciones para alergias.</p></li>
-      <li><span class="n">04</span><h3>El día</h3><p>Montaje, cocina y servicio de nuestro equipo.</p></li>
+    <h2 id="como-title" class="bx-k bx-r">04 — Cómo trabajamos</h2>
+    <p class="bx-statement bx-r">Una sola persona del equipo lleva tu evento de principio a fin.</p>
+    <ol class="bx-steps">
+      <li class="bx-r"><span>01</span>La idea</li>
+      <li class="bx-r"><span>02</span>El espacio</li>
+      <li class="bx-r"><span>03</span>El menú</li>
+      <li class="bx-r"><span>04</span>El día</li>
     </ol>
   </div>
 </section>
 
-<section class="section pres" id="presupuesto" aria-labelledby="pres-title">
+<section class="bx-end" id="presupuesto" aria-labelledby="pres-title">
   <div class="wrap">
-    <div class="split split--top">
-      <div class="stack">
-        <h2 id="pres-title" class="h2">Cuéntanos tu celebración</h2>
-        <p class="lead">Rellena estos datos y te llamamos para hablar del evento. Si lo prefieres, llámanos directamente.</p>
-        <a class="phone-pill" href="tel:+34609751647"><span><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="num">609 75 16 47</span></a>
-      </div>
-      <form class="form form-panel" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
+    <p class="bx-k">05 — Hablemos</p>
+    <h2 id="pres-title" class="bx-end__t">¿Lo celebramos?</h2>
+    <a class="bx-end__tel num" href="tel:+34609751647">609 75 16 47</a>
+    <p class="bx-end__or">O cuéntanos tu celebración y te llamamos:</p>
+    <form class="form form-panel" data-form="eventos" data-subject="Solicitud de presupuesto · Britos Restauración & Eventos" data-success="Gracias. Hemos recibido tu solicitud y te llamaremos para hablar del evento." novalidate>
         <div class="field"><label for="e-tipo">Tipo de evento</label><select class="input" id="e-tipo" name="tipo" required aria-describedby="e-tipo-err"><option value="">Elige una opción</option><option>Boda</option><option>Bautizo</option><option>Comunión</option><option>Catering</option><option>Evento de empresa</option><option>Celebración familiar</option><option>Otro</option></select><p class="error" id="e-tipo-err">Elige el tipo de evento.</p></div>
         <div class="field"><label for="e-fecha">Fecha estimada</label><input class="input" id="e-fecha" name="fecha" type="text" placeholder="Por ejemplo, mayo de 2027" required aria-describedby="e-fecha-err"><p class="error" id="e-fecha-err">Indica una fecha aproximada, aunque sea el mes.</p></div>
         <div class="field"><label for="e-invitados">Invitados aproximados</label><input class="input" id="e-invitados" name="invitados" type="number" inputmode="numeric" min="1" max="2000" placeholder="Por ejemplo, 120" required aria-describedby="e-invitados-err"><p class="error" id="e-invitados-err">Indica un número aproximado de invitados.</p></div>
@@ -235,7 +181,6 @@
         <div class="form__foot"><button class="btn btn--lg" type="submit">Pedir presupuesto</button></div>
         <p class="form__status" role="status" hidden></p>
       </form>
-    </div>
   </div>
 </section>
 
