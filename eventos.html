@@ -16,7 +16,7 @@
 <link rel="preload" href="assets/fonts/unageo-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/coliner-medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/img/britos-montaje-01-1600.webp" imagesrcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" imagesizes="(max-width: 899px) 100vw, 58vw">
-<link rel="stylesheet" href="assets/css/styles.css?v=e9ea8440">
+<link rel="stylesheet" href="assets/css/styles.css?v=2606910d">
 <script src="assets/js/main.js?v=a32b78e7" defer></script>
 <script src="assets/js/motion.js?v=11d99c30" defer></script>
 <script src="assets/js/carousel.js?v=3fe8a7d3" defer></script>
@@ -105,49 +105,78 @@
   </div>
 </section>
 
-<section class="bx-ev" id="celebraciones" aria-labelledby="cel-title">
-  <div class="wrap"><h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2></div>
-  <article class="bx-card" id="bodas" style="--c:var(--mostaza)">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">01 / 05</span>
-      <h3 class="bx-card__t">Bodas</h3>
-      <div class="bx-card__txt"><p>Banquete, cóctel y barra libre, en salón o al aire libre.</p><p class="bx-card__l">Cóctel y banquete · Barra libre y recena · Montaje de mesa</p></div>
-      <figure class="bx-card__ph"><img src="assets/img/britos-montaje-01-800.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1206" height="1844" alt="" loading="lazy" decoding="async" style="object-position:center 60%"></figure>
+<section class="bx-sec bx-ev" id="celebraciones" aria-labelledby="cel-title">
+  <div class="wrap">
+    <h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2>
+    <div class="bx-acc">
+      <details class="bx-ev__item bx-r" id="bodas" name="celebraciones" style="--c:var(--mostaza)" open>
+        <summary><span class="bx-ev__n">01</span><span class="bx-ev__t">Bodas</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph"><img src="assets/img/britos-montaje-01-800.webp" srcset="assets/img/britos-montaje-01-800.webp 800w, assets/img/britos-montaje-01-1600.webp 1600w" sizes="(max-width: 799px) 100vw, 45vw" width="1206" height="1844" alt="" loading="lazy" decoding="async" style="object-position:center 60%"></figure>
+          <div class="bx-ev__txt">
+            <p>Banquete, cóctel y barra libre, en salón o al aire libre.</p>
+            <ul><li>Cóctel y banquete</li><li>Barra libre y recena</li><li>Montaje de mesa</li></ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="Boda">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </details>
+      <details class="bx-ev__item bx-r" id="comuniones" name="celebraciones" style="--c:var(--pizarra)">
+        <summary><span class="bx-ev__n">02</span><span class="bx-ev__t">Comuniones</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="(max-width: 799px) 100vw, 45vw" width="1600" height="1066" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
+          <div class="bx-ev__txt">
+            <p>Menús de adulto e infantil, en salones pensados para familias.</p>
+            <ul><li>Menú infantil</li><li>Salón privado</li><li>Tarta y sobremesa</li></ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="Comunión">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </details>
+      <details class="bx-ev__item bx-r" id="bautizos" name="celebraciones" style="--c:var(--capsula-burdeos)">
+        <summary><span class="bx-ev__n">03</span><span class="bx-ev__t">Bautizos</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph"><img src="assets/img/hibernia-02-800.webp" srcset="assets/img/hibernia-02-800.webp 800w, assets/img/hibernia-02-1600.webp 1600w" sizes="(max-width: 799px) 100vw, 45vw" width="1600" height="1067" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
+          <div class="bx-ev__txt">
+            <p>Bautizos, cumpleaños, aniversarios y reuniones familiares.</p>
+            <ul><li>Salones privados</li><li>Menús cerrados</li><li>Coctelería</li></ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="Bautizo">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </details>
+      <details class="bx-ev__item bx-r" id="catering" name="celebraciones" style="--c:var(--oliva)">
+        <summary><span class="bx-ev__n">04</span><span class="bx-ev__t">Catering</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph"><img src="assets/img/britos-eventos-01-800.webp" srcset="assets/img/britos-eventos-01-800.webp 800w, assets/img/britos-eventos-01-1600.webp 1600w" sizes="(max-width: 799px) 100vw, 45vw" width="1365" height="2000" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
+          <div class="bx-ev__txt">
+            <p>Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.</p>
+            <ul><li>Cocina en destino</li><li>Personal de sala</li><li>Menaje y mobiliario</li></ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="Catering">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </details>
+      <details class="bx-ev__item bx-r" id="empresa" name="celebraciones" style="--c:var(--evento-britos)">
+        <summary><span class="bx-ev__n">05</span><span class="bx-ev__t">Empresa</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph"><img src="assets/img/ribbo-02-800.webp" srcset="assets/img/ribbo-02-800.webp 800w, assets/img/ribbo-02-1600.webp 1600w" sizes="(max-width: 799px) 100vw, 45vw" width="1600" height="2400" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
+          <div class="bx-ev__txt">
+            <p>Comidas de equipo, cenas de Navidad y presentaciones.</p>
+            <ul><li>Menús de grupo</li><li>Facturación a empresa</li><li>Presentaciones</li></ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="Evento de empresa">Pedir presupuesto <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </details>
     </div>
-  </article>
-  <article class="bx-card" id="comuniones" style="--c:var(--pizarra)">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">02 / 05</span>
-      <h3 class="bx-card__t">Comuniones</h3>
-      <div class="bx-card__txt"><p>Menús de adulto e infantil, en salones pensados para familias.</p><p class="bx-card__l">Menú infantil · Salón privado · Tarta y sobremesa</p></div>
-      <figure class="bx-card__ph"><img src="assets/img/ribbo-03-800.webp" srcset="assets/img/ribbo-03-800.webp 800w, assets/img/ribbo-03-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="1066" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
-    </div>
-  </article>
-  <article class="bx-card" id="bautizos" style="--c:var(--capsula-burdeos)">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">03 / 05</span>
-      <h3 class="bx-card__t">Bautizos</h3>
-      <div class="bx-card__txt"><p>Bautizos, cumpleaños, aniversarios y reuniones familiares.</p><p class="bx-card__l">Salones privados · Menús cerrados · Coctelería</p></div>
-      <figure class="bx-card__ph"><img src="assets/img/hibernia-02-800.webp" srcset="assets/img/hibernia-02-800.webp 800w, assets/img/hibernia-02-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="1067" alt="" loading="lazy" decoding="async" style="object-position:center 50%"></figure>
-    </div>
-  </article>
-  <article class="bx-card" id="catering" style="--c:var(--oliva)">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">04 / 05</span>
-      <h3 class="bx-card__t">Catering</h3>
-      <div class="bx-card__txt"><p>Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.</p><p class="bx-card__l">Cocina en destino · Personal de sala · Menaje y mobiliario</p></div>
-      <figure class="bx-card__ph"><img src="assets/img/britos-eventos-01-800.webp" srcset="assets/img/britos-eventos-01-800.webp 800w, assets/img/britos-eventos-01-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1365" height="2000" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
-    </div>
-  </article>
-  <article class="bx-card" id="empresa" style="--c:var(--evento-britos)">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">05 / 05</span>
-      <h3 class="bx-card__t">Empresa</h3>
-      <div class="bx-card__txt"><p>Comidas de equipo, cenas de Navidad y presentaciones.</p><p class="bx-card__l">Menús de grupo · Facturación a empresa · Presentaciones</p></div>
-      <figure class="bx-card__ph"><img src="assets/img/ribbo-02-800.webp" srcset="assets/img/ribbo-02-800.webp 800w, assets/img/ribbo-02-1600.webp 1600w" sizes="(max-width: 899px) 100vw, 40vw" width="1600" height="2400" alt="" loading="lazy" decoding="async" style="object-position:center 40%"></figure>
-    </div>
-  </article>
+  </div>
 </section>
+<script>
+(() => {
+  const open = () => { const d = location.hash && document.querySelector('details' + location.hash); if (d) d.open = true; };
+  addEventListener('hashchange', open); open();
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-tipo]'); if (!a) return;
+    const sel = document.getElementById('e-tipo'); if (sel) sel.value = a.dataset.tipo;
+  });
+})();
+</script>
 
 <section class="bx-sec" id="como" aria-labelledby="como-title">
   <div class="wrap">

@@ -6,11 +6,11 @@ export const meta = {
 
 // Celebraciones: lo único de la página que lleva color
 const EVENTOS = [
-  { id: 'bodas', t: 'Bodas', w: 'bodas', c: 'var(--mostaza)', img: 'britos-montaje-01', pos: 'center 60%', p: 'Banquete, cóctel y barra libre, en salón o al aire libre.', l: ['Cóctel y banquete', 'Barra libre y recena', 'Montaje de mesa'] },
-  { id: 'comuniones', t: 'Comuniones', w: 'comuniones', c: 'var(--pizarra)', img: 'ribbo-03', pos: 'center 50%', p: 'Menús de adulto e infantil, en salones pensados para familias.', l: ['Menú infantil', 'Salón privado', 'Tarta y sobremesa'] },
-  { id: 'bautizos', t: 'Bautizos', w: 'bautizos', c: 'var(--capsula-burdeos)', img: 'hibernia-02', pos: 'center 50%', p: 'Bautizos, cumpleaños, aniversarios y reuniones familiares.', l: ['Salones privados', 'Menús cerrados', 'Coctelería'] },
-  { id: 'catering', t: 'Catering', w: 'catering', c: 'var(--oliva)', img: 'britos-eventos-01', pos: 'center 40%', p: 'Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.', l: ['Cocina en destino', 'Personal de sala', 'Menaje y mobiliario'] },
-  { id: 'empresa', t: 'Empresa', w: 'empresas', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
+  { id: 'bodas', tipo: 'Boda', t: 'Bodas', w: 'bodas', c: 'var(--mostaza)', img: 'britos-montaje-01', pos: 'center 60%', p: 'Banquete, cóctel y barra libre, en salón o al aire libre.', l: ['Cóctel y banquete', 'Barra libre y recena', 'Montaje de mesa'] },
+  { id: 'comuniones', tipo: 'Comunión', t: 'Comuniones', w: 'comuniones', c: 'var(--pizarra)', img: 'ribbo-03', pos: 'center 50%', p: 'Menús de adulto e infantil, en salones pensados para familias.', l: ['Menú infantil', 'Salón privado', 'Tarta y sobremesa'] },
+  { id: 'bautizos', tipo: 'Bautizo', t: 'Bautizos', w: 'bautizos', c: 'var(--capsula-burdeos)', img: 'hibernia-02', pos: 'center 50%', p: 'Bautizos, cumpleaños, aniversarios y reuniones familiares.', l: ['Salones privados', 'Menús cerrados', 'Coctelería'] },
+  { id: 'catering', tipo: 'Catering', t: 'Catering', w: 'catering', c: 'var(--oliva)', img: 'britos-eventos-01', pos: 'center 40%', p: 'Llevamos la cocina y el servicio a tu finca, tu casa o tu espacio.', l: ['Cocina en destino', 'Personal de sala', 'Menaje y mobiliario'] },
+  { id: 'empresa', tipo: 'Evento de empresa', t: 'Empresa', w: 'empresas', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
 ];
 
 // Nuestras casas: lista tipográfica; la foto asoma al pasar el ratón
@@ -57,17 +57,34 @@ export const body = ({ DATA, im, ico }) => `
   </div>
 </section>
 
-<section class="bx-ev" id="celebraciones" aria-labelledby="cel-title">
-  <div class="wrap"><h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2></div>
-  ${EVENTOS.map((e, i) => `<article class="bx-card" id="${e.id}" style="--c:${e.c}">
-    <div class="wrap bx-card__in">
-      <span class="bx-card__n">${pad(i + 1)} / ${pad(EVENTOS.length)}</span>
-      <h3 class="bx-card__t">${e.t}</h3>
-      <div class="bx-card__txt"><p>${e.p}</p><p class="bx-card__l">${e.l.join(' · ')}</p></div>
-      <figure class="bx-card__ph">${im(e.img, '', { sizes: '(max-width: 899px) 100vw, 40vw', pos: e.pos })}</figure>
+<section class="bx-sec bx-ev" id="celebraciones" aria-labelledby="cel-title">
+  <div class="wrap">
+    <h2 id="cel-title" class="bx-k bx-r">03 — Celebraciones</h2>
+    <div class="bx-acc">
+      ${EVENTOS.map((e, i) => `<details class="bx-ev__item bx-r" id="${e.id}" name="celebraciones" style="--c:${e.c}"${i === 0 ? ' open' : ''}>
+        <summary><span class="bx-ev__n">${pad(i + 1)}</span><span class="bx-ev__t">${e.t}</span><span class="bx-ev__x" aria-hidden="true"></span></summary>
+        <div class="bx-ev__body">
+          <figure class="bx-ev__ph">${im(e.img, '', { sizes: '(max-width: 799px) 100vw, 45vw', pos: e.pos })}</figure>
+          <div class="bx-ev__txt">
+            <p>${e.p}</p>
+            <ul>${e.l.map((x) => `<li>${x}</li>`).join('')}</ul>
+            <a class="bx-ev__cta" href="#presupuesto" data-tipo="${e.tipo}">Pedir presupuesto ${ico('arrow')}</a>
+          </div>
+        </div>
+      </details>`).join('\n      ')}
     </div>
-  </article>`).join('\n  ')}
+  </div>
 </section>
+<script>
+(() => {
+  const open = () => { const d = location.hash && document.querySelector('details' + location.hash); if (d) d.open = true; };
+  addEventListener('hashchange', open); open();
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-tipo]'); if (!a) return;
+    const sel = document.getElementById('e-tipo'); if (sel) sel.value = a.dataset.tipo;
+  });
+})();
+</script>
 
 <section class="bx-sec" id="como" aria-labelledby="como-title">
   <div class="wrap">
