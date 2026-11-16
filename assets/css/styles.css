@@ -1084,24 +1084,41 @@ body[data-theme="britos"] .footer__brands img { opacity: 0.85; }
   .bx-hero__cta { width: 100%; justify-content: space-between; }
 }
 
-/* Nuestras casas: lista grande */
-.bx-list { margin-top: 28px; border-top: 1px solid var(--ink); }
-.bx-list__row { position: relative; display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; align-items: baseline; gap: 16px; padding: clamp(18px, 2.2vw, 30px) 0; border-bottom: 1px solid var(--line-strong); color: var(--ink); }
-.bx-list__n { font-size: 0.8125rem; color: var(--muted); letter-spacing: 0.1em; }
-.bx-list__name { font-family: "Coliner", "Unageo", sans-serif; font-weight: 500; font-size: clamp(1.9rem, 1rem + 4vw, 5.2rem); line-height: 1; text-transform: uppercase; transition: transform 600ms var(--ease-expo), color 300ms ease; }
-.bx-list__type { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.bx-list__type .ico { width: 16px; height: 16px; }
-.bx-list__img { position: absolute; z-index: 2; right: 22%; top: 50%; width: clamp(180px, 18vw, 280px); aspect-ratio: 4 / 5; overflow: hidden; pointer-events: none; opacity: 0; transform: translateY(-50%) rotate(-4deg) scale(0.85); transition: opacity 300ms ease, transform 600ms var(--ease-expo); }
-.bx-list__img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+/* Nuestras casas: foto en gris con el logotipo encima */
+.bx-brands { margin-top: 28px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.bx-brand { grid-column: span 2; }
+.bx-brand:nth-child(n+4) { grid-column: span 3; }
+.bx-brand > a, .bx-brand > div { display: block; color: var(--ink); }
+.bx-brand__ph { position: relative; margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: #000; }
+.bx-brand:nth-child(n+4) .bx-brand__ph { aspect-ratio: 16 / 10; }
+.bx-brand__ph > img:first-child { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.55); transition: transform 1100ms var(--ease-expo), filter 500ms ease; }
+.bx-brand__logo { position: absolute; left: 50%; top: 50%; width: auto; height: clamp(72px, 6vw, 104px); transform: translate(-50%, -50%); }
+.bx-brand__logo--hibernia { height: clamp(84px, 7vw, 120px); }
+.bx-brand__type { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0 0; border-bottom: 1px solid transparent; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+.bx-brand__type .ico { width: 18px; height: 18px; transition: transform 300ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) {
-  .bx-list__row:hover .bx-list__name { transform: translateX(18px); }
-  .bx-list__row:hover .bx-list__img { opacity: 1; transform: translateY(-50%) rotate(-4deg) scale(1); }
+  .bx-brand:hover .bx-brand__ph > img:first-child { transform: scale(1.05); filter: grayscale(1) brightness(0.7); }
+  .bx-brand:hover .bx-brand__type .ico { transform: translateX(4px); }
 }
+/* Tableta: dos columnas */
+@media (max-width: 1099px) {
+  .bx-brands { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bx-brand, .bx-brand:nth-child(n+4) { grid-column: span 1; }
+  .bx-brand:first-child { grid-column: 1 / -1; }
+  .bx-brand .bx-brand__ph, .bx-brand:nth-child(n+4) .bx-brand__ph { aspect-ratio: 4 / 3.4; }
+  .bx-brand:first-child .bx-brand__ph { aspect-ratio: 16 / 8; }
+}
+/* Móvil: carrusel que se desliza con el dedo, asomando la siguiente */
 @media (max-width: 699px) {
-  .bx-list__row { grid-template-columns: 32px minmax(0, 1fr); row-gap: 6px; }
-  .bx-list__type { grid-column: 2; }
-  .bx-list__img { display: none; }
+  .bx-brands { display: flex; gap: 12px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); overscroll-behavior-x: contain; scrollbar-width: none; }
+  .bx-brands::-webkit-scrollbar { display: none; }
+  .bx-brand, .bx-brand:nth-child(n+4), .bx-brand:first-child { flex: 0 0 78%; scroll-snap-align: start; }
+  .bx-brand .bx-brand__ph, .bx-brand:nth-child(n+4) .bx-brand__ph, .bx-brand:first-child .bx-brand__ph { aspect-ratio: 4 / 5; }
+  .bx-brand__logo { height: 84px; }
+  .bx-brand__logo--hibernia { height: 100px; }
 }
+.bx-brands-hint { display: none; }
+@media (max-width: 699px) { .bx-brands-hint { display: block; margin-top: 14px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); } }
 
 /* Celebraciones: acordeón; cada evento con su color */
 .bx-acc { margin-top: 28px; border-top: 1px solid var(--ink); }
@@ -1160,5 +1177,5 @@ body[data-theme="britos"] .footer__brands img { opacity: 0.85; }
 .bx-end :focus-visible { outline-color: #fff; }
 .bx-end .form-panel :focus-visible { outline-color: #000; }
 /* Sin ligaduras decorativas de Coliner en los titulares en mayúsculas */
-body[data-theme="britos"] :is(.bx-hero__word, .bx-hero__line, .bx-statement, .bx-list__name, .bx-card__t, .bx-steps li, .bx-end__t, .bx-end__tel) { font-variant-ligatures: none; font-feature-settings: "liga" 0, "dlig" 0, "calt" 0; }
+body[data-theme="britos"] :is(.bx-hero__word, .bx-hero__line, .bx-statement, .bx-steps li, .bx-end__t, .bx-end__tel) { font-variant-ligatures: none; font-feature-settings: "liga" 0, "dlig" 0, "calt" 0; }
 body[data-theme="britos"] .top__call { border-radius: 0; }

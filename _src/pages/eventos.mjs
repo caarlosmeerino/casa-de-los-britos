@@ -1,7 +1,7 @@
 export const meta = {
   out: 'eventos.html', theme: 'britos', current: '', preload: 'britos-montaje-01', og: 'britos-eventos-01',
   title: 'Britos Restauración & Eventos · Bodas, bautizos, comuniones y catering',
-  description: 'Grupo de restauración y eventos en Ribera del Fresno: Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y Bianco. Bodas, bautizos, comuniones y catering. Tel. 609 75 16 47.',
+  description: 'Grupo de restauración y eventos en Ribera del Fresno: Casa de los Britos, Ribbo, Ca·Nostra, Café Hibernia y la discoteca Bianco. Bodas, bautizos, comuniones y catering. Tel. 609 75 16 47.',
 };
 
 // Celebraciones: lo único de la página que lleva color
@@ -13,13 +13,13 @@ const EVENTOS = [
   { id: 'empresa', tipo: 'Evento de empresa', t: 'Empresa', w: 'empresas', c: 'var(--evento-britos)', img: 'ribbo-02', pos: 'center 40%', p: 'Comidas de equipo, cenas de Navidad y presentaciones.', l: ['Menús de grupo', 'Facturación a empresa', 'Presentaciones'] },
 ];
 
-// Nuestras casas: lista tipográfica; la foto asoma al pasar el ratón
+// Nuestras casas: foto del local con su logotipo encima
 const MARCAS = [
-  { name: 'Casa de los Britos', type: 'Restaurante', img: 'dsc06935', href: 'index.html' },
-  { name: 'Ribbo', type: 'Restaurante', img: 'ribbo-03' },
-  { name: 'Ca·Nostra', type: 'Bar y restaurante', img: 'canostra-01' },
-  { name: 'Café Hibernia', type: 'Café y copas', img: 'hibernia-01' },
-  { name: 'Bianco', type: 'Terraza', img: 'bianco-01' },
+  { k: 'casa', name: 'Casa de los Britos', type: 'Restaurante', img: 'dsc06935', alt: 'Comedor de Casa de los Britos', pos: 'center 55%', w: 382, href: 'index.html' },
+  { k: 'ribbo', name: 'Ribbo Restaurant', type: 'Restaurante', img: 'ribbo-03', alt: 'Salón de Ribbo con mesas altas y espejo redondo iluminado', pos: 'center 55%', w: 367 },
+  { k: 'canostra', name: 'Ca·Nostra', type: 'Bar y restaurante', img: 'canostra-01', alt: 'Barra de Ca·Nostra con su letrero y copas colgadas', pos: 'center 35%', w: 320 },
+  { k: 'hibernia', name: 'Café Hibernia', type: 'Café y copas', img: 'hibernia-01', alt: 'Fachada y terraza del Café Hibernia al atardecer', pos: 'center 55%', w: 146 },
+  { k: 'bianco', name: 'Bianco', type: 'Discoteca', img: 'bianco-02', alt: 'Noche en la discoteca Bianco, con bengalas en la barra', pos: 'center 45%', w: 290 },
 ];
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -47,13 +47,15 @@ export const body = ({ DATA, im, ico }) => `
 
 <section class="bx-sec bx-sec--tight" id="marcas" aria-labelledby="marcas-title">
   <div class="wrap">
-    <h2 id="marcas-title" class="bx-k bx-r">02 — Nuestras casas</h2>
-    <ul class="bx-list">
-      ${MARCAS.map((m, i) => {
-        const inner = `<span class="bx-list__n">${pad(i + 1)}</span><span class="bx-list__name">${m.name}</span><span class="bx-list__type">${m.type}${m.href ? ` ${ico('arrow')}` : ''}</span><span class="bx-list__img" aria-hidden="true">${im(m.img, '', { sizes: '280px' })}</span>`;
-        return `<li class="bx-r">${m.href ? `<a class="bx-list__row" href="${m.href}">${inner}</a>` : `<div class="bx-list__row">${inner}</div>`}</li>`;
+    <h2 id="marcas-title" class="bx-k bx-r">02 — Nuestras marcas</h2>
+    <ul class="bx-brands">
+      ${MARCAS.map((m) => {
+        const inner = `<figure class="bx-brand__ph">${im(m.img, m.alt, { sizes: '(max-width: 699px) 80vw, (max-width: 1099px) 45vw, 34vw', pos: m.pos })}<img class="bx-brand__logo bx-brand__logo--${m.k}" src="assets/logos/marca-${m.k}-white.png" alt="${m.name}" width="${m.w}" height="240" loading="lazy"></figure>
+        <p class="bx-brand__type"><span>${m.type}</span>${m.href ? ico('arrow') : ''}</p>`;
+        return `<li class="bx-brand bx-r">${m.href ? `<a href="${m.href}" aria-label="${m.name}, ${m.type.toLowerCase()}: ver su web">${inner}</a>` : `<div>${inner}</div>`}</li>`;
       }).join('\n      ')}
     </ul>
+    <p class="bx-brands-hint" aria-hidden="true">Desliza para ver las cinco →</p>
   </div>
 </section>
 
